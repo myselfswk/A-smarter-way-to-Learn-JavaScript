@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Reading and setting paragraph text</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            function expendLorises() {
+                var para = "Slow lorises are a group of several species of strepsirrhine primates which make up the genus Nycticebus. They have a round head, narrow snout, large eyes, and a variety of distinctive coloration patterns that are species-dependent. The hands and feet of slow lorises have several adaptations that give them a pincer-like grip and enable them to grasp branches for long periods of time. Slow lorises have a toxic bite, a rare trait among mammals."
+                document.getElementById("slowLorises").innerHTML = para;
+                /*Almost anything, including HTML tags, can be inserted into the web page this way.*/
+            }
+
+            function placeAList() {
+                var list = "<ol><li>Slow loris</li><li>Fast loris</li><li>Just-right loris</li></ol>";
+                document.getElementById("lorisList").innerHTML = list;
+            }
+
+            function emphasis() {
+                var emWord = document.getElementById("content").innerHTML;
+                document.getElementById("emText").innerHTML = emWord;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Reading and setting paragraph text</h1>
+        <p id="slowLorises">
+            Slow lorises are a group of several species of strepsirrhine primates which make up the genus Nycticebus.
+            <a href="JavaScript:void(0)" onclick="expendLorises();">Click For More...</a>
+        </p>
+        <div id="lorisList">
+            <a href="JavaScript:void(0)" onclick="placeAList();">Loris List, Click Here</a>
+        </div>
+        <div>
+            <em class="content">Muhammad Waleed Khan</em>,
+            <input type="text" id="emText" onfocus="emphasis();">
+        </div>
+    </body>
+</html>

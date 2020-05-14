@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM: Junk artifacts and nodeType</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            /*Script For ID humpty*/
+            function paraContentChan() {
+                var divPara = document.getElementById("humpty");
+                var pCounter = 0;   //Counts the number of paragraphs
+                for (var i = 0; i < divPara.childNodes.length; i++) {
+                    if (divPara.childNodes[i].nodeType === 1 ) {
+                        pCounter++;
+                    }
+                    if (pCounter === 2) {
+                        divPara.childNodes[i].innerHTML = "All his men.";
+                        break;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>The DOM: Junk artifacts and nodeType</h1>
+        <!--Most browsers interpret the whitespace that's created by some carriage returns, tabs, and spaces used to format the code
+            as text nodes. When you look at the markup, you see 3 text nodes, the children of the title element and of the two 
+            paragraph elements.-->
+        <p>Firefox sees this markup with 8 additional text nodes that are nothing but whitespace
+            created by indenting.</p>
+        <img src="../Images/FirefoxIndentation.PNG" alt="Firefox indenting Picture">
+        <hr />
+        <!--These extra text nodes create noise that makes it hard for your DOM-reading code to find
+            the signal. In one browser, the first child of the body node might be a div. In another browser,
+            the first child of the body might be an empty text node.-->
+        <div
+        ><p
+        >There's not much to this.
+        </p
+        ><p
+        >Nor to this.
+        </p
+        ></div
+        >
+        <!--This markup takes advantage of the fact that any carriage returns, tabs, and spaces that are
+            enclosed in the < and the > of a tag are ignored by the browser. To the browser, < p > is the
+            same as <p>. And...
+            <
+            div
+            >
+            ...is the same as <div>.-->
+        <!--When whitespace is inside the brackets, the browser doesn't count it as a text node. So if
+            you "hide" all carriage returns, tabs, and spaces inside the brackets as the code above does,
+            there's no junk in the DOM. Any noise that would keep your JavaScript from reading the signal
+            is removed.-->
+        <!--Suppose you want to replace the text content of the second paragraph in a particular div
+            with the string "All his men." Here's the markup, with the text we're going to change
+            highlighted.-->
+        <div id="humpty" onmouseover="paraContentChan();">
+            <p>All the king's horses.</p>
+            <p>All the dude's crew.</p>
+            <p>All the town's orthopedists.</p>
+        </div>
+    </body>
+</html>

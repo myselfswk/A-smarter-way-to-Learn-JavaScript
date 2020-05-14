@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Objects: Checking for properties and methods</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Objects: Checking for properties and methods</h1>
+
+    <script>
+        /*Basic Plan*/
+        var basicPlan = {
+            name: "Basic",
+            price: 3.99,
+            space: 100,
+            transfer: 1000,
+            pages: 10
+        };
+
+        var gotTheProperty = "name" in basicPlan;
+        alert(gotTheProperty);
+
+        /*Here are the parts:
+            the property in question, enclosed in quotes—in this case, price
+            the keyword in
+            the object, in this case, plan*/
+
+        /*...the variable gotTheProperty is false. plan1 in the example also has a method named calcAnnual. A method is a type of property of
+        an object, so if you write...
+            var gotTheProperty = "calcAnnual" in plan1;
+        ...the variable gotTheProperty is true.*/
+
+        /*If you want a list of an object's properties, there's a spiffy way to do it:*/
+        var listOfProperties = [];
+        for (var prop in basicPlan) {
+            listOfProperties.push(prop);
+        }
+
+        /*It was later added to the prototype of the constructor function that I used to create the object, and so became a property of the
+        object by inheritance. The code above includes inherited properties (including methods) in the collection. If you want to limit the
+        list of properties to those that have been explicitly declared for the object, omitting those that are inherited from a prototype,
+        you need to use hasOwnProperty.*/
+
+        var listOfPropertiesTwo = [];
+        for (var propTwo in basicPlan) {
+            if (basicPlan.hasOwnProperty(propTwo)) {
+                listOfProperties.push(propTwo);
+            }
+        }
+    </script>
+</body>
+</html>

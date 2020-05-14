@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Reading field values</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            /*---------------Reading field values-------------------*/
+
+            function checkAddress(email) {
+                var emailValue = document.getElementById(email).value;
+                if (emailValue === "waleedkhan@gmail.com") {
+                    alert("ok");
+                }
+                else {
+                    alert("Invalid Email");
+                }
+            }
+
+            /*----------------Setting field values-------------------*/
+
+            function fillAge() {
+                var userAge;
+                var userName = document.getElementById("name").value;
+                switch (userName) {
+                    case 'Waleed Khan' :  /* || 'Muhammad Waleed Khan' || "Waleed Khan"*/
+                        userAge = 21;
+                        break;
+                    case 'Huzaifa Khan' :  /* || 'Muhammad Huzaifa Khan' || 'Muhammad Huzaifa Nadir' || 'Huzaifa Khan' || 'Huzaifa Nadir'*/
+                        userAge = 23;
+                        break
+                    case 'Khan Abu Bakar' :  /* || 'Abu Bakar'*/
+                        userAge = 19;
+                        break;
+                }
+                document.getElementById("age").value = userAge;
+                /*This example shows that you can not only read a value in a field with
+                    document.getElementById..., but can also "write" a value into a field.*/
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Field values</h1>
+        <ul>
+            <li>Reading field values</li>
+            <form onsubmit="checkAddress('email');">
+                Email:<input type="text" required="required" id="email"> <input type="submit" value="Submit">
+            </form>
+            <hr />
+            <!--Now, when the user clicks the submit button, the function checkAddress executes. Note
+                that, even though the action is a click on the submit button, the onSubmit event handler is in
+                the form tag, not in the submit button tag. That's because the submission is an event that
+                applies to the whole form, not the submit button.-->
+            <li>Setting field values</li>
+            <form>
+                Name:<br /> <input type="text" id="name" onblur="fillAge();"><br />
+                Age:<br /> <input type="text" id="age">
+            </form>
+        </ul>
+    </body>
+</html>

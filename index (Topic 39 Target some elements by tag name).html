@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Target some elements by tag name</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            #tableForColor {
+                border: solid;
+            }
+            #tableForColor td {
+                padding: 10px;
+                border: solid;
+            }
+        </style>
+        <script>
+            /*In the last chapter you learned how to make an array-like collection of all the elements in
+                a document that have a particular tag name. For example, this statement makes a collection of
+                all the paragraphs in the document and assigns the collection to the variable pars.
+            var pars = document.getElementsByTagName("p");*/
+            /*above example we seen in the previous topic of this book*/
+
+            /*You also learned to read or set the properties of any of the elements in a collection of
+                elements by using array-like notation—a number in square brackets. For example, this
+                statement "reads" the contents of the second element in the collection pars and assigns the
+                string to the variable textInMiddleParagraph.
+            var textInMiddleParagraph = pars[1].innerHTML;*/
+
+            /*But suppose you don't want a collection of all the paragraphs in the document. Suppose
+                you want just a collection of all the paragraphs within a particular div.*/
+
+            function divnPara() {
+                var divContent = document.getElementById("rules");
+                var perpara = divContent.getElementsByTagName("p");  /*perpara = perticular paragraphs*/
+                for (var i=0; i<perpara.length; i++) {
+                    perpara[i].style.fontFamily = "cursive";
+                }
+                /*Once the id of the target div has been assigned to a variable, for example e, you can
+                    assemble a collection of all the paragraphs within that div. Instead of writing...
+                document.getElementsByTagName("p");
+                    ...which would make a collection of all the paragraphs in the document, you write...
+                divContent.getElementsByTagName("p");
+                    ...which makes a collection of all the paragraphs in the div*/
+            }
+            /*JavaScript For Table*/
+            function tableChangeColor() {
+                var tab = document.getElementById("tableForColor");
+                var cells = tab.getElementsByTagName("td");
+                for (var i=0; i<cells.length; i++) {
+                    cells[i].style.fontSize = "2em";
+                }
+                for (var i=0; i<cells.length; i++) {
+                    cells[i].style.backgroundColor = "blue";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Target some elements by tag name</h1>
+        <div id="rules" onmouseover="divnPara();">
+            <p>This is Para One</p>
+            <p>This is Para Two</p>
+            <p>This is Para Three</p>
+        </div>
+        <hr />
+        <table id="tableForColor" onmouseover="tableChangeColor();">
+            <tr>
+                <td>Name:</td>
+                <td>Muhammad Waleed Khan</td>
+            </tr>
+            <tr>
+                <td>Father Name:</td>
+                <td>Nadir Shah Khan</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>fastnegative1004@gmail.com</td>
+            </tr>
+        </table>
+    </body>
+</html>

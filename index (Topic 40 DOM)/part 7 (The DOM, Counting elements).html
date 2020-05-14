@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM: Counting elements</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            function fillLi() {
+                var elementLi = document.getElementsByTagName("li");
+                var howMany = elementLi.length;
+                for (var i=0; i<howMany; i++) {
+                    if (elementLi[i].innerHTML === "") {
+                        elementLi[i].innerHTML = "Coming Soon";
+                    }
+                }
+            }
+            /*-------------------For Image------------------*/
+            function forImage() {
+                var parentNode = document.getElementById("divOne");
+                var nodeList = parentNode.childNodes;
+                var howManyKids = nodeList.length;
+                var noOfPics = 0;
+                for (var i=0; i<howManyKids; i++) {
+                    if (nodeList[i].nodeName.toLocaleLowerCase() === "img") {
+                        noOfPics++;
+                    }
+                }
+                alert(noOfPics);
+            }
+            /*Declares the image-counter and sets it at 0
+              Loops through all the children of the div
+              If the node name, converted to lower-case, is "img", increments the image-counter*/
+        </script>
+    </head>
+    <body>
+        <h1>The DOM: Counting elements</h1>
+        <ul onmousemove="fillLi();">
+            <li>Muhammad Waleed Khan</li>
+            <li></li>
+            <li>Muhammad Waleed Khan</li>
+            <li></li>
+            <li>Muhammad Waleed Khan</li>
+        </ul>
+        <div id="divOne" onmousemove="forImage();">
+            <img width="300" src="../Images/srk-new-pic.jpg" alt="Srk New Pic">
+            <img width="300" src="../Images/SRK-Old-Pic.jpg" alt="Srk old Pic">
+            <img width="300" src="../Images/nodeName.PNG" alt="Node Name">
+            <img width="300" src="../Images/DOM.PNG" alt="DOM">
+        </div>
+    </body>
+</html>

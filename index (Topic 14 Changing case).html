@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Changing case</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            //The solution is to code the array elements in lower-case, and convert the user's input, whatever it is, to lower-case, so we
+            // always have apples to compare with apples.
+            var cityToCheck = prompt("Enter your city");
+            cityToCheck = cityToCheck.toLowerCase();  //Note that the keyword toLowerCase must be in camelCase.
+            var cleanestCities = ["karachi", "lahore", "multan", "islamabad", "peshawar"];
+            var noOfCities = cleanestCities.length;
+            for (var i = 0; i < noOfCities; i++) {
+                if (cityToCheck === cleanestCities[i]) {
+                    alert("It's one of the cleanest cities");
+                }
+            }
+            //you can also convert your characters of array into upper case
+            var citiesWithUpperCase = [];
+            for (i=0; i< noOfCities; i++) {
+                citiesWithUpperCase.push(cleanestCities[i].toUpperCase());
+            }
+            alert(citiesWithUpperCase[0]);
+        </script>
+    </head>
+    <body>
+        <h1>Changing case</h1>
+    </body>
+</html>

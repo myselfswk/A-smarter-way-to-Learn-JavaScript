@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Placing scripts</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            //JavaScript code doesn't care where it lives. It can be mixed in with—that is, embedded in —the HTML that creates a Web page. Or,
+            // like an external CSS file, it can be placed in a separate file that is loaded by the HTML file. In most cases, it's best to
+            // have an external JavaScript file, for some of the same reasons it's best to have an external CSS file. But you still need to
+            // know how to place JavaScript within your HTML file, so let's start with that.
+
+            //As you know, the order of HTML code is important, because it determines the order of elements on the page. If you want the
+            // headline to appear above the text, you put the headlineabove the text in the HTML. But JavaScript doesn't work the same way.
+            // All of your JavaScript functions, for example, are loaded into memory when the page loads. Wherever the code may be, the browser
+            // finds it and stores it by the time the page is finished loading. Once the page is loaded, all the JavaScript code stays in
+            // memory, ready to execute, for as long as the page is displayed.
+
+            //You can legally put JavaScript code almost anywhere in the HTML file—in the head section, at the beginning of the body section,
+            // somewhere in the middle of the body section, or at the end of the body section. You could, if you wanted to be perverse,
+            // sprinkle different Javascript functions all over your HTMLfile in different places. The browser would sort it all out.
+
+            //Generally, the best place for scripts, though, is at the end of the body section. This guarantees that CSS styling and image
+            // display won't get held up while scripts are loading.
+
+            //When you embed blocks of JavaScript in HTML (as opposed to having a separate JavaScript file), you must enclose the JavaScript
+            // code between script opening and script closing tags. Here are two functions enclosed between the tags.
+
+            function greet() {
+                alert("Assalam-u-Alaikum, Waleed Here...!");
+            }
+            greet();
+
+            //For most purposes, coders prefer to have all or most of their JavaScript code in a separate JavaScript file, then have the
+            // browser load this external file at the same time it's loading the HTML file.
+
+            //A JavaScript file is, like HTML and CSS files, a simple text file. It doesn't have a header or any other special sections. It
+            // doesn't even have script opening and script closing tags. It's just pure JavaScript code.
+
+            //You can include as many external JavaScript files as you like.
+            //You can include JavaScript files and also embed other JavaScript code in the HTML.
+        </script>
+    </head>
+    <body>
+        <h1>Placing scripts</h1>
+        <ul>
+            <p>What makes a JavaScript file a JavaScript file is its file extension: .js. The front end of
+                the file name is up to you, as long as it's legal. Any of these would be fine.</p>
+            <li>scripts.js</li>
+            <li>coreJS.js</li>
+            <li>main-code.js</li>
+            <li>main_code.js</li>
+            <li>main.code.js</li>
+        </ul>
+        <!--You include a JavaScript file in an HTML file the same way you include an external CSS file—with an opening and closing tag.
+            <script src="whatever.js"></script>
+        -->
+        <!--For the same reason that it's a good idea to put JavaScript code at the end of the body section, it's a good idea to place the
+            markup that includes JavaScript files at the end of the body section
+        -->
+    </body>
+</html>

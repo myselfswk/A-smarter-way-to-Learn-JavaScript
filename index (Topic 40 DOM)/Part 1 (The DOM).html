@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h1>The DOM</h1>
+        <!--DOM is Document Object Model-->
+        <!--The DOM is an organization chart, created
+            automatically by the browser when your web page loads, for the whole web page.-->
+        <!--All the things on your web page—the tags, the text blocks, the images, the links, the tables, the style
+            attributes, and more—have spots on this organization chart. This means that your JavaScript
+            code can get its hands on anything on your web page, anything at all, just by saying where that
+            thing is on the chart.-->
+        <!--What's more, your JavaScript can add things, move things, or delete things
+            by manipulating the chart. If you wanted to (you wouldn't), you could almost create an entire
+            web page from scratch using JavaScript's DOM methods.-->
+        <!--Here's a simplified web page. I've indented the different levels in the hierarchy. The three
+            top levels of the DOM are always the same for a standard web page. The document is the first
+            level. Under the document is the second level, the html. And under the html are the co-equal
+            third levels, the head and the body. Under each of these are more levels.-->
+        <h2>DOM Level Hierarchy (Part 1)</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../Images/DOMHCode.PNG" alt="DOM Hierarchy Code">
+                </div>
+                <div class="col-md-6">
+                    <img src="../Images/DOM.PNG" alt="DOM Hierarchy">
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h2>DOM Level Hierarchy (Part 2)</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../Images/levelHierarchy.PNG" alt="DOM Level Hierarchy">
+                </div>
+                <div class="col-md-6">
+                    <img src="../Images/DOMLevel.PNG" alt="DOM Hierarchy level">
+                </div>
+            </div>
+        </div>
+        <!--In a company organization chart, each box represents a person. In the DOM organization
+            chart, each box represents a node.-->
+        <!--In this particular chart, there are three types of nodes: document, element, and text. The
+            document node is the top level. Element nodes are <html>, <head>, <body>, <title>, <div>,
+            and <p>. Text nodes are the strings that comprise the title and the two paragraphs.-->
+    </body>
+</html>

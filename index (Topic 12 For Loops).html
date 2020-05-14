@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Loops</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            var cleanestCities = ["Karachi", "Lahore", "Multan", "Islamabad", "Peshawar"];
+            //Now you go through the array to see if there's a match with the user's city. If there is, you display an alert telling the user
+            // city is one of the cleanest. If there's no match, you display an alert telling the user her city isn't on the list.
+            
+            var cityToCheck = prompt('Enter Your City:');
+            if (cityToCheck === cleanestCities[0]) {
+                alert("It's one of the cleanest cities");
+            }
+            else if (cityToCheck === cleanestCities[1]) {
+                alert("It's one of the cleanest cities");
+            }
+            else if (cityToCheck === cleanestCities[2]) {
+                alert("It's one of the cleanest cities");
+            }
+            else if (cityToCheck === cleanestCities[3]) {
+                alert("It's one of the cleanest cities");
+            }
+            else if (cityToCheck === cleanestCities[4]) {
+                alert("It's one of the cleanest cities");
+            }
+            else {
+                alert("It's not on the list");
+            }
+            //we do this because there is all the cities which is the cleanest, if user select any of the city, the pop up must generate with one
+            // of the cleanest.
+            //Conveniently, JavaScript provides a more concise coding approach. Here's a for loop that accomplishes most of what the
+            // verbose code in the example above accomplishes.
+            for (var i=0; i<=4; i++) {
+                if (cityToCheck === cleanestCities[i]) {
+                    alert('One Of the Cleanest City');
+                }
+            }
+            //n the example, the counter, i, serves two purposes. It keeps track of the number of iterations so looping can halt at the
+            // right point. And it serves as the index number of the array, allowing the code to progress through all the elements of the
+            // array as the counter increments with each iteration.
+            //In the example, I specify that the loop is to run as long as i <= 4. Alternatively, I could have specified i < 5. Either way,
+            // since the counter starts at 0, the loop runs 5 times.
+
+            //for loops: Flags, Booleans, array length, and loopus interruptus
+
+            //There are several problems with the for loop example I gave you in the last chapter. The first problem is a potential
+            // communication problem. If a match between the user's city and the list of cleanest cities is found, a confirming alert displays.
+            // But if there is no match, nothing happens. The user is left in the dark. If no match is found, we need to display an alert saying
+            // so. But how do we do that?
+            //We do it with a flag. A flag is just a variable that starts out with a default value that you give it, and then is switched to
+            // a different value under certain conditions. In our example, let's say this is the flag.
+
+            var flag = 'no';
+
+            for (var i=0; i<=4; i++) {
+                if (cityToCheck === cleanestCities[i]) {
+                    alert('One Of the Cleanest City');
+                    flag = 'yes';
+                }
+            }
+            if (flag === 'no') {
+                alert('It is not in the List');
+            }
+            //the use of flag variable that we can assign condition it easily
+            //This works, but rather than assigning the strings "no" and "yes" to the switch, it's conventional to use the Boolean values
+            // false and true.
+
+            var flagBoolean = false;
+
+            for (var i=0; i<=4; i++) {
+                if (cityToCheck === cleanestCities[i]) {
+                    flagBoolean = true;
+                    alert('One Of The Cleanest City..!');
+                }
+            }
+            if (flagBoolean === false) {
+                alert('It is Not in the List');
+            }
+            //There are only two Booleans, true and false. Note that they aren't enclosed in quotes.
+
+            //The next problem with our example is that it potentially wastes computing cycles. Suppose on the second loop a match is found
+            // and the alert displays. The way the loop is coded, the loop goes on looping all the way to the end. This is unnecessary,
+            // since we got our answer in the second loop. The problem is solved with the keyword break.
+
+            var flagBoolean = false;
+
+            for (var i=0; i<=4; i++) {
+                if (cityToCheck === cleanestCities[i]) {
+                    flagBoolean = true;
+                    alert('One Of The Cleanest City..!');
+                    break;
+                }
+            }
+            if (flagBoolean === false) {
+                alert('It is Not in the List');
+            }
+
+            //The last problem: In the example, I assume that the number of elements in the array is known. But what if it isn't? JavaScript
+            // has a way of finding out.
+
+            var names = ['Waleed', 'Huzaifa', 'Abu Bakar', 'Daniyal', 'Sufyan'];
+            var numOfElement = names.length;
+            var nameToCheck = propmt('Enter the Name:');
+            var flagBooleanName = false;
+
+            for (var i=0; i<=numOfElement; i++) {
+                if (nameToCheck === names[i]) {
+                    flagBooleanName = true;
+                    alert('One Of The Cleanest City..!');
+                    break;
+                }
+            }
+            if (flagBooleanName === false) {
+                alert('It is Not in the List');
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Loops</h1>
+        <!--The first line begins with the keyword for.
+            The three specifications that define the loop are inside the parentheses.
+            1. A variable that counts iterations and also serves as the changing array index is declared and set to a starting value, in
+            this case 0.
+            2. The limit on the loop is defined. In this case, the loop is to keep running as long as the counter doesn't exceed 4. Since the
+            counter, in this case, is starting at 0, the loop will run 5 times.
+            3. What happens to the counter at the end of every loop. In this case, the counter is incremented each time.
+        -->
+        <!--
+            The three specifications inside the parentheses are always in the same order:
+                1. What to call the counter (usually i) and what number to start it at (typically 0, but you can also assign variable to it)
+                2. How many loops to run (in this case, the number of elements in the array)
+                3. How to change the counter after each iteration (typically to add 1 each time through)
+        -->
+        <h2>for loops: Flags, Booleans, array length, and loopus interruptus</h2>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Object</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>Object</h1>
+        <!--Create objects with properties is a handier scheme that more accurately reflects the 2-dimensional, gridlike nature of the host
+            company's table that we started with-->
+
+        <script>
+            /*--------------------Defining an Object-------------------*/
+            var info = {
+                name: "Muhammad Waleed Khan",
+                fatherName: "Nadir Shah Khan",
+                age: 21,
+                email: "Fastnegative1004@gmail.com",
+                degree: "Bs(Cs)"
+            };
+            /*Things to notice:
+                The code begins like any variable definition, with the keyword var, followed by the object name, and then an equal sign.
+                But then, instead of a value, there's a curly bracket, whose twin comes at the end of the block.
+                Each property begins with a name, followed by a colon, and then a value.
+                Each property definition except the last ends with a comma.
+                The closingcurly bracket is followed by a semicolon, because of the equal sign in the first line.*/
+            
+            /*------------------Updating the object-----------------*/
+            info.siblings = ["Huzaifa Khan", "Khan Abubabar"];
+
+            alert(info.siblings[1]);
+        </script>
+    </body>
+</html>

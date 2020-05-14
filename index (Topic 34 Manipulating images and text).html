@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Manipulating images and text</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            .hidden {
+                display: none;
+            }
+            .big {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 1em;
+            }
+        </style>
+        <script>
+            /*The function called by the event handler gives the image a class of "hidden," so it disappears.*/
+            function disappearImage() {
+                document.getElementById("disappear").className = "hidden";
+                /*It's className, in camelCase, not class.
+                    Assigning a class to an element this way replaces any classes that the element has been
+                    assigned in the static markup.*/
+            }
+
+            function makeBig() {
+                document.getElementById("para").className += "big";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Manipulating images and text</h1>
+        <img src="./Images/ButtonPic.PNG" alt="Button Pic" id="disappear" onclick="disappearImage();">
+        <p id="para" onmouseover="makeBig();">My Name is Muhammad Waleed Khan</p>   <!-- class="big"-->
+    </body>
+</html>

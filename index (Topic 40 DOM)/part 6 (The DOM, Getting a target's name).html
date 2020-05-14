@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM: Getting a target's name</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script>
+            /*--------------------for node name------------------*/
+            function nodeName() {
+                var parent = document.getElementById("divOne");
+                var target = parent.firstChild;
+                var name = target.nodeName;
+                /*if the node is an element, the variable nName will be assigned a
+                    string, like P or DIV, that corresponds to the characters of the tag that are enclosed in the
+                    brackets. In HTML, the name is usually given in all-caps, even if the markup is in lowercase.*/
+                /*On the other hand, if the node is a text node, the name of the node is always #text—in lower-case.*/
+            }
+
+            /*-----------find out node value--------------------*/
+            function nodeValue() {
+                var parent = document.getElementById("divOne");
+                var target = parent.firstChild;
+                var nodeVal = target.nodeValue;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>The DOM: Getting a target's name</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div id="divOne">
+                        <p>This is Para One</p>
+                        <p>This is Para Two</p>
+                        <p>This is Para Three</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../Images/nodeName.PNG" alt="nodeName Chart">
+                </div>
+            </div>
+        </div>
+        <!--So if this is the markup, with the first child of the H2 element a node with the name "#text"...-->
+        <h2>Do <em>Not</em> Hit!</h2>
+        <!--...the node value is "Do ".
+            An element node like P or IMG has a name but no value. If you try to assign an element
+            node value to a variable, the variable will be assigned null.-->
+        <!--there are situations in which nodeName gets you, for example, a "p" instead of a "P"
+            or an "href" instead of an "HREF," it's good practice to standardize the case when you're
+            testing for names-->
+    </body>
+</html>

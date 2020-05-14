@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Testing sets of conditions</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            var weight = 400;
+            var time = 4;
+            if (weight > 300 && time < 6) {
+                alert("Come to our tryout!");
+            }
+            else {
+                alert("Come to our cookout!");
+            }
+            //another condition, you can use multiple conditions in if using and & or gates
+            myweight = 450;
+            mytime = 5;
+            age = 21;
+            gender = 'male';
+            // (&&) this is use as and operator
+            if (myweight > 300 && mytime < 6 && age > 17 && gender === "male") {
+                alert("Come to our tryout!");
+            }
+            else {
+                alert("Come to our cookout!");
+            }
+            //another condition
+            var uni = 'Iqra University';
+            var GPA = 3.32;
+            var sport = 'Cricket';
+            // (||) this is use as of operator
+            if (uni === 'Iqra University' || GPA > 2.5 || sport === "Cricket") {
+                alert("Welcome to Team CodiNauts..!");
+            }
+            else {
+                alert("Have you looked into Our Online Services");
+            }
+            //You can combine any number of and and or conditions. When you do, you create ambiguities.
+            //you can also use && and || operators at the same if statement
+            //like, if you wanna apply for in any of the Pakistani University
+            var name = 'Muhammad Waleed Khan'
+            var myage = 21;
+            var per = 75;
+            var nationality = 'Pakistani';
+            //when you combine mathematical expressions, you may face some problems like bodmas rules. your can override this by using parenthese
+            // to advance these problems. because without parenthese, the below condition may have two meanings
+            //like, in the below example we use age attribute in parentheses
+            if ((age >= 18 || age <= 30) && per > 50 && nationality === 'Pakistani') {
+                alert('Congratulations '+ name + ', Welcome to Iqra University!')
+            }
+            else {
+                alert('Sorry, You are not applicable..!')
+            }
+        </script>
+    </head>
+    <body>
+        <!--Using the if statement, you've learned to test for a condition. If the condition is met, one or more statements execute. But suppose not one
+            but two conditions have to be met in order for a test to succeed.-->
+    </body>
+</html>

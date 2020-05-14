@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Functions</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            //On your website, suppose there are several pages where you want to display an alert that tells the user the current time.
+            // (To keep it simple, we'll settle for 24-hour time rather than converting to a.m. and p.m.) The code might look like this.
+            //-------Simple Code------------//
+            var now = new Date();
+            var theHr = now.getHours();
+            var theMin = now.getMinutes();
+            alert("time: " + theHr + ":" + theMin);
+
+            //You could write this block of code over and over again, every time you need it. Or you could write it once as a function,
+            // naming it, say, tellTime. After that, this is the only code you'll need in order to make the whole block execute.
+
+            //Whenever JavaScript sees that short statement, the time-telling block executes.
+            //you can also write the above code in the function like,
+            //-------Code in Function------------//
+            function tellTime() {
+                var now = new Date();
+                var theHr = now.getHours();
+                var theMin = now.getMinutes();
+                alert("time: " + theHr + ":" + theMin);
+            }
+            //The time-telling code—the code that creates the Date object, extracts the time, formats it, and displays an alert—is exactly
+            // the same code we started with, but is now packaged as a function.
+
+            //Again, note that the calling code—the code that invokes the function—does nothing more than state the name of the function
+            // including its parentheses.
+            tellTime();
+
+            //-------------Functions: Passing them data----------------//
+
+            //A function is a block of code that does something robotically, whenever you invoke its name. For example, when you write
+            // greetUser(); a function with that name executes. To be clear: The kind of function I'm talking about is one that you've written
+            // yourself, and named yourself.
+            function greetUser() {
+                alert("Assalam-u-Alaikum, There!");
+            }
+            greetUser();
+
+            //One of the really useful things about functions is that those parentheses in the calling code don't have to be empty. If you
+            // put some data inside the parentheses, you can pass that data to the function that it'll use when it executes.
+
+            //Now, instead of just calling the function, you're calling it and passing data to it. The string inside the parentheses, i.e.
+            // the data you're passing, is called an argument. The function is now more versatile, because the message it displays is no
+            // longer hardwired into it. It'll display any message that you pass to it from the calling code, via the argument.
+            var name = prompt("What is your name:");
+            //A variable inside the parentheses in a function statement is known as a parameter.
+            //You don't have to declare a variable when it's used as a parameter in a function definition. When it's used as a parameter,
+            // the declaration is implicit.
+            //The name of the function and the name of the parameter don't have to have anything in common. And remember, these names are up
+            // to you, as long as you follow the variable-naming rules.
+            function tellName(username) {
+                alert("Assalam-u-Alaikum, " + name);
+            }
+            //The value passed to a function is used in the body of the function to accomplish something. In this case, the value is used to
+            // specify the message in the alert.
+
+            tellName(name);
+            //So now we've filled the parentheses of both the calling code and the function definition. The parentheses of the calling code
+            // contain an argument.
+            //JavaScript matches up arguments and parameters according to their order, not their names.
+
+            var fname = prompt("What is Your First Name");
+            var lname = prompt("What is Your Last Name");
+            var course = prompt("In Which Course Do you Enroll");
+
+            function info(firstname, lastname, myCourse) {
+                alert("Your Full Name is " + firstname + " " + lastname);
+                alert("You Enroll in " + myCourse);
+            }
+
+            info(fname, lname, course);
+
+            //------------Functions: Passing data back from them-----------------//
+
+            //As you learned in the last chapter, a function becomes more versatile when you pass data to it so it can deliver a custom job.
+            //But a function can do even more. It can pass data back to the calling code.
+            
+            var merchTot = 75;   //merchandise total
+            var orderTot;   //order total
+
+            if (merchTot >= 100) {
+                orderTot = merchTot;
+            }
+            else if (merchTot < 50.01) {
+                orderTot = merchTot + 5;
+            }
+            else {
+                orderTot = merchTot + 5 + (.03 * (merchTot - 50));
+            }
+
+            alert(orderTot);
+
+            //We can also put above code in the function as,
+            function calOrder() {
+                var merchTot = 75;   //merchandise total
+                var orderTot;   //order total
+
+                if (merchTot >= 100) {
+                    orderTot = merchTot;
+                }
+                else if (merchTot < 50.01) {
+                    orderTot = merchTot + 5;
+                }
+                else {
+                    orderTot = merchTot + 5 + (.03 * (merchTot - 50));
+                }
+
+                return orderTot;
+            }
+            //the function returns the value held in orderTot to the calling code. It passes data back.
+            //a function can assin to any legal variable, also do some calculation in variable with the function
+
+            alert("Total Order Pay: " + calOrder());
+
+            //adding two values function using prompt
+            var val1 = prompt("Enter First Value:");
+            var val2 = prompt("Enter Second Value:");
+            val1 = parseInt(val1);
+            val2 = parseInt(val2);
+
+            function add(fval, sval) {
+                var result = parseInt(fval) + parseInt(sval);
+                alert("The Addition Of Two Numbers is " + result);
+            }
+
+            add(val1, val2);
+
+            //---------------Functions: Local vs. global variables-------------------------//
+            //A global variable is one that's declared in the main body of your code—that is, not inside a function.
+            //A local variable is one that's declared inside a function. It can be either a parameter of the function, which is declared
+            // implicitly by being named as a parameter, or a variable declared explicitly in the function with the var keyword.
+
+            var theSum;
+            function addNumbers() {
+                theSum = 7 + 9;
+                alert(theSum);
+            }
+            //the variable theSum is declared in the main code. The function addNumbers is called to assign it a value. Having been declared
+            // in the main code, the variable has global scope. So this function or any other function can use it.
+            addNumbers();
+            
+            //If I declare the variable not in the main code, but inside the function.
+            function subsNumbers() {
+                var theSubs = 14 - 7;
+                alert(theSubs);
+            }
+            //the variable has the value 7 only inside the function.
+            //Since the variable theSubs is declared with the keyword var inside the function, not in the main code, its scope is local.
+            subsNumbers();
+
+            //By "declaring it in a function" I mean that you declare the variable explicitly with the keyword var—as opposed to casually
+            // introducing it into the function without var.
+            //If you decleared two variable with same name (one global & one is local means on function), the varible inside the function
+            // has different as the global variable has different all over.
+            
+            //but if the local variable in the function is assign with the 'return' statement and its return the value to the function, So
+            // If we call the function equals to that global variable with the same name as local variable, than both the local and global
+            // variables have same values
+
+            //brings us to a question you may be asking:
+            //If a function can use a global variable, why do you have to pass a value from an argument to a parameter? Why not just declare a
+            // global variable, then have the function use it? Well, you can, but asking functions to work with global variables is asking
+            // them to eavesdrop on the main code, and like human eavesdropping, it invites mischief in the form of confusion and unintended
+            // consequences. There is no controversy among coders about this. It's always best to pass values explicitly to functions through
+            // arguments. Global variables have no place in functions.
+        </script>
+    </head>
+    <body>
+        <h1>Functions</h1>
+        <p>A function is a block of JavaScript that robotically does the same thing again and again, whenever you invoke its name. It saves
+            you repetitive coding and makes your code easier to understand.</p>
+        <!--You can give a function any name that would be a legal variable name, then add parentheses. Function-naming follows the same
+            rules as variable naming because, technically, a function is a variable. This will make more sense to you when you learn more about
+            functions in a subsequent chapter.-->
+        <ul>
+            <li>Functions: Passing them data</li>
+            <li>Functions: Passing data back from them</li>
+            <li>Functions: Local vs. global variables</li>
+            <!--Now we come to the subject of variable scope. That is, the difference between global and local variables. Some variables have
+                global scope, which makes them global variables. Other variables have local scope, which makes them local variables. Nothing
+                could be simpler, but for some reason, when the subject comes up in books and tutorials, obfuscation(looping like) often
+                rules.-->
+        </ul>
+    </body>
+</html>

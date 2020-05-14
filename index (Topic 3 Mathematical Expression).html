@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Mathematical Expressions</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>-->
+        <script>
+            //whenever you're using numbers, you're working with mathematics
+            var add = 2+7;
+            alert(add);
+
+            alert( 4+6 );
+
+            var num = 17;
+            var num1 = num + 34;
+            alert(num1);
+
+            var whatsLeftOver = 10 % 3;
+            alert(whatsLeftOver);
+
+            var equaldivided = 9 % 3;
+            alert(equaldivided);
+
+            //There are several specialized math expressions you need to know.
+
+            var incnum = 10;
+            incnum++;     //This is a short way of writing...  incnum = incnum + 1
+            alert(incnum);
+            //You decrement using minuses instead of pluses.
+            var incnum1 = 12;
+            incnum1--;
+            alert(incnum1);
+            var num2 = 1;
+            var newNum = num2++;
+
+            alert(num2);
+            alert(newNum);
+            //In the example above, the original value of num is assigned to newNum, and num is incremented afterward. If num is originally assigned 1 in the first
+            //statement, the second statement boosts its value to 2. newNum gets the original value of num, 1.
+
+            var num3 = 1;
+            var newNum1 = ++num3;   //this condition(++num3) will add 1 to num3 and than num3 is save in newNum1
+
+            alert(num3);
+            alert(newNum1);
+
+            //both num and newNum wind up with a value of 2. If you put the minuses after the variable, the new variable is assigned the original value
+            var num4 = 1;
+            var newNum2 = num4--;   //this condition subs 1 after value save to newNum2
+
+            alert(num4);
+            alert(newNum2);
+
+            var num5 = 1;
+            var newNum3 = --num5;   //this condition(--num3) will subs 1 to num5 and than num5 is save in newNum3
+
+            alert(num5);
+            alert(newNum3);
+
+            //bodmas rule
+            var totalCost = 1 + 3 * 4;
+            alert(totalCost);
+            //The value of totalCost varies, depending on the order in which you do the arithmetic. If you begin by adding 1 + 3, then multiply the sum by 4, totalCost
+            //has the value of 16. But if you go the other way and start by multiplying 3 by 4, then add 1 to the product, you get 13.
+            //we can add brackets to specify our needs
+            var totalCost1 = 1 + (3 * 4);
+            alert(totalCost1);
+
+            var totalCost2 = (1 + 3) * 4;
+            alert(totalCost2);
+
+            var resultOfComputation = (2 * 4) * 4 + 2;
+            alert(resultOfComputation);
+
+            resultOfComputation = ((2 * 4) * 4) + 2;
+            alert(resultOfComputation);
+
+            resultOfComputation = (2 * 4) * (4 + 2);
+            alert(resultOfComputation);
+        </script>
+    </head>
+    <body>
+        <h1>Mathematical Expressions</h1>
+        <!--The arithmetic operators I've been using, +, -, *, and /, are undoubtedly familiar to you.-->
+        <!--% is the modulus operator. It doesn't give you the result of dividing one number by another. It gives you the remainder when the division
+            is executed. If one number divides evenly into another, the modulus operation returns 0.-->
+        <!--In JavaScript as in algebra, the ambiguity is cleared up by precedence rules. As in algebra, the rule that applies here is that multiplication
+            operations are completed before addition operations.-->
+        <!--But you don't have to memorize JavaScript's complex precedence rules. You can finesse the issue by using parentheses to eliminate ambiguity.
+            Parens override all the built-in precedence rules. They force JavaScript to complete operations enclosed by parens before completing any other
+            operations.-->
+        <!--When you use parens to make your intentions clear to JavaScript, it also makes your code easier to grasp, both for other coders and for you when
+            you're trying to understand your own code a year down the road.-->
+    </body>
+</html>

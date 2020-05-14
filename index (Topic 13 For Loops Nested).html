@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>For Loops Nested</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            var firstNames = ["Waleed", "Huzaifa", "Abu Bakar"];
+            var lastNames = ["Khan", "Yousufzai"];
+            var fullNames = [];
+            for (var i = 0; i < firstNames.length; i++) {
+                for (var j = 0; j < lastNames.length; j++) {
+                    fullNames.push(firstNames[i] + " " + lastNames[j]);
+                }
+            }
+            //The inner loop runs a complete cycle of iterations on each iteration of the outer loop. If the outer loop counter is i and the
+            // inner loop counter is j, j will loop through 0, 1, 2, and all the way to the end while i is on 0. Then i will increment to 1,
+            // and j will loop through all of its values again. The outer loop is the minute hand of a clock. The inner loop is the
+            // second hand.
+            //You can have as many levels of nesting as you like.
+            //A nested loop is indented 2 spaces beyond its outer loop.
+            alert(fullNames[3]);
+        </script>
+    </head>
+    <body>
+        <h1>For Loops Nested</h1>
+    </body>
+</html>

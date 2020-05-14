@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The DOM: Finding children</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        /*--------------For email id-------------------*/
+        var userEmail = document.getElementById("email").value;
+
+        /*--------------For DIv & Para-----------------*/
+        function chanDiv() {
+            var userDiv = document.getElementById("userDiv");
+            var userPara = userDiv.getElementsByTagName("p");
+            for (var i=0; i<userPara.length; i++) {
+                userPara[i].style.fontSize = "2em";
+                userPara[i].style.fontFamily = "Times New Roman";
+            }
+        }
+
+        /*---------------For Multiple Divs-------------------*/
+        function chanDivTwo() {
+            /*For First Div*/
+            var userDivOne = document.getElementById("cal");
+            var userParaOne = userDivOne.getElementsByTagName("p");
+            /*For Second Div*/
+            var userDivTwo = document.getElementById("ny");
+            var userParaTwo = userDivTwo.getElementsByTagName("p");
+            for (var i=0; i<userParaOne.length; i++) {
+                userParaOne[i].style.fontFamily = "sans-serif";
+                userParaOne[i].style.fontSize = "2em";
+            }
+            userParaOne[0].innerHTML = "Waleed Khan";
+            for (var i=0; i<userParaTwo.length; i++) {
+                userParaTwo[i].style.fontFamily = "cursive";
+                userParaTwo[i].style.fontSize = "1.5em";
+            }
+        }
+
+        /*------------to get element by DOM----------------*/
+        
+        /*Simple Approach*/
+        var para = document.childNodes[0].childNodes[1].childNodes[3].childNodes[1];
+        var paraContent = para.innerHTML;
+        /*I'll highlight each child level and tell you what it points to.
+            1. document.childNodes[0].childNodes[1].childNodes[1].childNodes[1]; is the
+            first child of the document, <html>
+            2. document.childNodes[0].childNodes[1].childNodes[1].childNodes[1]; is the
+            second child of <html>, <body>
+            3. document.childNodes[0].childNodes[1].childNodes[1].childNodes[1]; is the
+            second child of <body>, <div> with the id "ny"
+            4. document.childNodes[0].childNodes[1].childNodes[1].childNodes[1]; is the
+            second child of <div> with the id "ny", the second <p> within the div
+        */
+
+        /*how to work your way down to the targeted node starting at the document level. But in practice, you'd normally start at a lower
+        level. For example, you could start with the second div, specifying its id. Then you'd target one of its children.*/
+        var userDivThree = document.getElementById("userDiv");
+        var userParaThree = userDivThree.childNodes[1];
+        var paraContentOne = userParaThree.innerHTML;
+    </script>
+</head>
+<body>
+    <h1>The DOM: Finding children</h1>
+    <label for="email">Email:</label>
+    <input type="text" id="email">
+    <div id="userDiv" onmouseover="chanDiv();">
+        <p>This is Paragraph One</p>
+        <p>This is Paragraph Two</p>
+        <p>This is Paragraph Three</p>
+        <p>This is Paragraph Four</p>
+    </div>
+    <div id="cal" onmouseover="chanDivTwo();">
+        <p>Southern Cal is sunny.</p>
+        <p>Northern Cal is rainy.</p>
+        <p>Eastern Cal is desert.</p>
+    </div>
+    <div id="ny" onmouseover="chanDivTwo();">
+        <p>Urban NY is crowded.</p>
+        <p>Rural NY is sparse.</p>
+    </div>
+</body>
+</html>

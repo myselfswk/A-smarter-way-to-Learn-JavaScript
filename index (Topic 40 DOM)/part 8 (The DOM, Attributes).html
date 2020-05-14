@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM: Attributes</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            .divClass {
+                color: blue;
+            }
+            .special {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The DOM: Attributes</h1>
+        <a href="http://www.amazon.com" target="_blank">Shop By Amazon</a>
+        <!--You've learned that in the above markup the text node "Shop" is the first (and only) child
+            of the element node <a>. But what is href="http://www.amazon.com"? It's definitely a node
+            of the DOM, and you could say that it's subsidiary to <a>. But it's not a child of <a>. It's an attribute of <a>.-->
+        <div id="divOne" class="special" onmousemove="divHasAttributes(); divGetAttributes();">
+            <p class="special">This is Para</p>
+            <img src="../Images/DOM.PNG" height="300" width="300" alt="DOM">  <!--, the element img has 4 attributes.-->
+            <span style="font-size: xx-large;">Waleed Khan</span>
+        </div>
+        <div id="divTwo" onmousemove="divSetAttributes();">
+            <p>Waleed Khan</p>
+        </div>
+
+        <script>
+            /*----------------check if div has an attribute name or not-----------------*/
+            function divHasAttributes() {
+                var target = document.getElementById("divOne");
+                var hasClass = target.hasAttribute("class");
+                alert(hasClass);
+            }
+
+            function divGetAttributes() {
+                var target = document.getElementById("divOne");
+                var getClass = target.getAttribute("class");
+                alert(getClass);
+            }
+
+            function divSetAttributes() {
+                var target = document.getElementById("divTwo");
+                target.setAttribute("class", "divClass");
+            }
+        </script>
+    </body>
+</html>

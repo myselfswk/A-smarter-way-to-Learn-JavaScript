@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Objects: Prototypes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Objects: Prototypes</h1>
+
+    <script>
+        alert("Assalam u Alaikum");
+        /*We want only one copy of the method, shared by all objects created with the constructor, no matter how many objects are created.
+        How do we do it? With a prototype statement*/
+        /*First, we don't include the method in the constructor function, because that creates a copy of the method for every single object
+        that's created with the constructor. Instead, we define the method as a prototype of the constructor, this way*/
+
+        function Plan(name, price, space, transfer, pages) {
+            this.name = name;
+            this.price = price;
+            this.space = space;
+            this.transfer = transfer;
+            this.pages = pages;
+            this.discountMonth = discountMonth;
+        }
+
+        /*now method with prototypes*/
+        Plan.prototype.calcAnnual = function(percentIfDics) {
+            var price = this.price;
+            var currDate = new Date();
+            var currMonth = currDate.getMonth();
+            for (var i=0; i<this.discountMonth.length; i++) {
+                if (this.discountMonth[i] === currMonth) {
+                    price = this.price * percentIfDics;
+                    break;
+                }
+            }
+            return price * 12;
+        }
+        /*Now, all objects created with the constructor Plan will share the same copy of the method calcAnnual. There's no unnecessary
+        duplication*/
+        /*the first line of the method have:
+            the name of the constructor function, in this case Plan.
+            the keyword prototype the name of the method that all objects created with Plan will share, in this case calcAnnual*/
+
+        /*Objects can have prototype properties as well as prototype methods. Suppose you wanted all objects created with the Plan to share
+        the same property, cancellable, with a value of true. You'd code the prototype this way*/
+        Plan.prototype.cancellable = true;
+        /*Now all objects created with the constructor function Plan share a property, cancellable, whose value is true*/
+
+        var basicPlan = new Plan("Basic", 3.99, 50, 100, 50, [5, 6]);
+        alert(basicPlan.name);
+
+        /*It's possible to override a prototype for any individual object. For example, suppose you want all objects created with the
+        constructor to share the same cancellable property, except for the least expensive plan, with the name "Basic." This is the
+        statement that does it*/
+        basicPlan.cancellable = false;
+    </script>
+</body>
+</html>

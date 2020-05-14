@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Target all elements by tag name</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            /*Suppose you want to give your users the option of doubling the size of the text in all the
+                paragraphs of the document. To accomplish this, you could give each paragraph an id. When
+                the user clicks the Double Text Size button, a function would cycle through all the paragraph
+                ids and make the change. The function could upsize the font either by assigning a new class to
+                each paragraph, with the class specifying a larger font size, or it could assign the new style
+                property directly*/
+            function makeBig() {
+                document.getElementById("nameDiv").style.fontSize = '2em';
+            }
+
+            /*An easier way to accomplish the same thing is to have the function say, "Find all the
+                paragraphs in the document and increase their size."
+                This statement finds all the paragraphs and assigns them to a variable:*/
+            function makeBigPara() {
+                var para = document.getElementsByTagName("p");
+                para[1].innerHTML = "This SUV is too big";
+                for (i=0; i<para.length; i++) {
+                    para[i].style.fontFamily = "Verdana, Geneva, sans-serif";
+                }
+            }
+            function picChan() {
+                var image = document.getElementsByTagName("img");
+                document.getElementsByTagName("img").src = "./Image/srk-new-pic.jpg";
+            }
+            function chanDiv() {
+                var div = document.getElementsByTagName("div");
+                for (i=0; i<div.length; i++) {
+                    div[i].style.fontFamily = "Verdana, Geneva, sans-serif";
+                }
+            }
+            function chanUl() {
+                var ulist = document.getElementsByTagName("ul");
+                for (i=0; i<ulist.length; i++) {
+                    ulist[i].style.fontSize = "3em";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Target all elements by tag name</h1>
+        <div id="nameDiv" onmouseover="makeBig();">My Name is Muhammad Waleed Khan</div>
+        <hr />
+        <p onmouseover="makeBigPara();">This bed is too small.</p>
+        <p onmouseover="makeBigPara();">This bed is too big.</p>
+        <p onmouseover="makeBigPara();">This bed is just right.</p>
+        <!--par[0] is the first paragraph. par[1] is the second paragraph. par[2] is the third
+            paragraph. par.length is 3, the number of items in the collection.-->
+        <!--you can also take image from html doc to JS-->
+        <img src="./Images/SRK-Old-Pic.jpg" alt="srk old pic" onmouseover="picChan();">
+        <hr />
+        <div onmouseover="chanDiv();">This is First The Div</div>
+        <div onmouseover="chanDiv();">This is Second The Div</div>
+        <div onmouseover="chanDiv();">This is Third The Div</div>
+        <hr />
+        <ul onmouseover="chanUl();">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+            <li>five</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Objects: Properties</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Objects: Properties</h1>
+
+    <script>
+        /*--------------------Defining an Object-------------------*/
+        var info = {
+                name: "Muhammad Waleed Khan",
+                fatherName: "Nadir Shah Khan",
+                age: 19,
+                email: "Fastnegative1004@gmail.com",
+                degree: "Bs(Cs)",
+                skills: ["Python", "SEO"]
+            };
+
+        /*we can change the value of any object property. Of course, you can assign a string instead of a number.*/
+        info.age = 21;
+        alert(info.age);
+
+        /*Update Object, You can also assign an array list to a property. You can also assign a Boolean value.*/
+        info.skills = ["Python", "Web Designing & Development", "SEO", "Graphic Designing"];
+        alert(info.skills[3]);
+
+        /*You can also use an assignment statement to define a new property for an object.*/
+        info.gender = "Male";
+        alert(info.gender);
+
+        /*Just as you can create an undefined variable by not assigning it a value, you can create an object without any properties.*/
+        var business = {};  //empty object
+
+        /*If you want to create a property now and assign it a value later, you can create it with a value of undefined.*/
+        business.businessName = undefined;
+        /*Note that the keyword undefined isn't in quotation marks. It isn't a string.*/
+
+        delete info.gender;
+        alert(info.gender);   //output is undefined because their is no value available in the gender
+
+        /*You can check to see if a property of an object exists. The following statement tests
+            whether there is such a thing as any property in the object and assigns the result (true or false) to the variable.*/
+        checkGender = "gender" in info;
+        alert(checkGender);   //returns false as their is no gender property in the info object
+
+        /*Things to notice:
+            You could use any legal variable name instead of checkGender.
+            The keyword in asks, "The property gender is in the object info—true or false?"
+            The property gender is in quotes.
+            The object info is not in quotes.*/
+    </script>
+</body>
+</html>

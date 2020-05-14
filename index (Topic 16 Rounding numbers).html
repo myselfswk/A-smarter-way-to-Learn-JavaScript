@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Rounding numbers</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            //simple example
+            var avgscore = 4.6;
+            var noOfStar = Math.round(avgscore);
+            //the method "round" can round of the value you entered, as "Math" is the package or library
+            alert(noOfStar);
+
+            //Things to keep in mind:
+            // 1) Math. is how all math functions begin. The "M" must be capped.
+            // 2) The function rounds up when the decimal is .5. It rounds 1.5 to 2, 2.5 to 3, etc. It rounds -1.5 to -1, -2.5 to -2, etc.
+
+            //When the result is assigned to a new variable, as in the example above, the unrounded number enclosed in parentheses is
+            // preserved. But you can assign the rounded number to the original variable, and the unrounded number will be replaced by the
+            // rounded number.
+
+            //scoreAvg = Math.round(scoreAvg);
+
+            //Instead of a variable, you can enclose a literal number in the parentheses.
+
+            var scoreAvg = Math.round(.0678437);
+            alert(scoreAvg);
+
+            //To force JavaScript to round up to the nearest integer, no matter how small the fraction, use ceil instead of round. The
+            // following code rounds .000001, which would normally round down to 0, up to the nearest integer, 1.
+
+            var scoreAvg = Math.ceil(0.00001);
+            alert(scoreAvg);
+            //ceil stands for "ceiling." It rounds .000001 up to 1, -.000001 up to 0, 1.00001 up to 2, and so on.
+
+            //To force JavaScript to round down to the nearest integer, no matter how large the fraction, use floor instead of round. The
+            // following code rounds .999999, which would normally round up to 1, down to 0.
+            
+            var scoreAvg = Math.floor(.999999);
+            alert(scoreAvg);
+
+            //floor rounds .999999 down to 0, 1.9 down to 1, -.000001 down to -1, and so on.
+        </script>
+    </head>
+    <body>
+        <h1>Rounding numbers</h1>
+        <ul>
+            <li>Ceil Method</li>
+            <li>floor Method</li>
+        </ul>
+    </body>
+</html>

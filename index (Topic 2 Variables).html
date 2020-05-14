@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Variables</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>-->
+        <script>
+            //var with string
+            var name = 'Waleed';
+            var city = 'karachi';
+
+            alert(name);
+            alert(city);
+
+            name = 'Huzaifa';
+            city = 'Lahore';
+            //Now, the name has change to
+
+            //The text change variable
+            var namchan = 'Now, the name has change to';
+            var natchan = 'Now, the Nationality has change to';
+            alert(namchan);
+            alert(name);
+            alert(natchan);
+            alert(city);
+            //decleared another variables
+            var lastName = '_khan_';
+            var setOrigin = '_Lahore_';
+
+            alert(lastName);
+            alert(setOrigin);
+            //var with number
+            agewal = 21;
+            agehuz = 23;
+            alert('Age Of Huzaifa Khan is');
+            alert(agehuz);
+            alert('Age Of Waleed Khan is');
+            alert(agewal);
+            alert("after adding 2 in both of the ages, values will be");
+            alert('Now, Age Of Huzaifa Khan is');
+            alert(agehuz + 2);
+            alert('Now, Age Of Waleed Khan is');
+            alert(agewal + 2);
+
+            //save into different variable
+            var list = 5;
+            alert(list);
+            var lisst = list + 5;
+            alert(lisst);
+
+            //Now adding two numbers
+            var num1 = 12;
+            var num2 = 15;
+            var add = num1 + num2;
+            alert(add);
+
+            //If you enclose a number in quotation marks and add any number...it won't work, because JavaScript can't sum a string and a number. JavaScript interprets
+            //"any number" as a word, not a number.
+            //javascript just concatenate the below statement, as 23 placed as string and 7 after it and result will be '237'
+            var num_one = "23";
+            var num_two = 7;
+            var add_one = num_one + num_two;
+            alert(add_one);
+            //Illegal Variable declearation : var 1stPresident = "Pakistan";
+            var prezWhoCame1st = "Pakistan";
+        </script>
+    </head>
+    <body>
+        <h1>Variables</h1>
+        <h2>JavaScript</h2>
+        <!--A variable is created when you write var (for variable) followed by the name that you choose to give it. It takes on a particular value when you
+            assign the value to it. This is a JavaScript statement that creates the variable name and assigns the value "some value" to it.-->
+        <!--JavaScript's blindness to meaning notwithstanding, when it comes to variable names, you'll want to give your variables meaningful names,
+            because it'll help you and other coders understand your code.
+            Again, the syntactic difference between variables and text strings is that variables are never enclosed in quotes, and text strings are always
+            enclosed in quotes-->
+        <!--Unlike a string, a number is not enclosed in quotes. That's how JavaScript knows it's a number that it can do math on and not a text string,
+            like a ZIP code, that it handles as text.-->
+        <!--A variable name can't contain any spaces.
+            A variable name can contain only letters, numbers, dollar signs, and underscores.
+            Though a variable name can't be any of JavaScript's keywords, it can contain keywords. For example, userAlert and myVar are legal.-->
+    </body>
+</html>

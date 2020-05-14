@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Objects: Constructors for methods</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>Objects: Constructors for methods</h1>
+
+        <script>
+            /*I showed you how to attach a function to an object, using the same approach
+                you use when you attach a variable to an object. When you attach a variable to an object, it's
+                called a property of the object. When you attach a function to an object, it's called a method of the object.*/
+            /*If you're creating more than one object with the same pattern of properties and methods,
+                it's a convenience to build the method as well as the properties into the constructor function*/
+
+            function Plan(name, price, space, transfer, pages, discountMonth) {
+                this.name = name;
+                this.price = price;
+                this.space = space;
+                this.transfer = transfer;
+                this.pages = pages;
+                this.discountMonth = discountMonth;
+                this.calcAnnual = function(precentIfDisc) {
+                    var price = this.price;
+                    var currDate = new Date();
+                    var currMonth = currDate.getMonth();
+                    for (var i=0; i<this.discountMonth.length; i++) {
+                        if (this.discountMonth[i] === currMonth) {
+                            price = this.price * precentIfDisc;
+                            break;
+                        }
+                    }
+                    return price * 12;
+                }
+            }
+
+            /*Things to notice, the beginning of the method definition:
+                Like the property definitions above it, the line begins with the keyword this, referring to
+                the name of whatever object is being constructed at any given time.
+                The next three pieces are the same: a dot, the name of the method, and an equal sign.
+                The next piece is different: the keyword function.
+                In this case, a single parameter is inside the parentheses, percentIfDisc. This is not a
+                parameter that's part of the constructor. It's a parameter of the method that the constructor
+                will create for each object. A value is passed to it not when a new object is created using
+                the constructor, but when the method, having already been created along with its object
+                via the constructor, is called.*/
+
+            var basicPlan = new Plan("Basic", 3.99, 100, 500, 10, [6, 7]);
+            var annualPriceForBasic = basicPlan.calcAnnual(0.67);
+            alert(annualPriceForBasic);
+
+            /*The main difference between the method definition in the one-off literal object definition
+                (no constructor) and the method definition in the constructor function is the first line. In other 
+                respects, both definitions are identical.
+                This is the first line of a method definition when an object is created on a one-off basis without a constructor:
+                    calcAnnual: function(percentIfDisc) {
+                This is the first line of a method definition within a constructor:
+                    this.calcAnnual = function(percentIfDisc) {*/
+
+            /*There are two other differences. Because in the constructor function the method definition
+                begins with an assignment (something = something else), you need a semicolon after the
+                closing curly bracket. And no comma is necessary if another property or method definition follows.*/
+        </script>
+    </body>
+</html>

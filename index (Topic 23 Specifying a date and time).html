@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Specifying a date and time</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            var currentDate = new Date();
+            alert("Calculated Current Date By System: " + currentDate);
+            //now, define new date with future time
+            var doomsday = new Date('June 20, 2025, 15:30:00');
+            //Notice how the date is specified. It's in quotes. The month is spelled out. There's a comma after the day of the month. The
+            // year is expressed in four digits.
+            alert("User Define Date: " + doomsday);
+
+            //Next, you extract from both dates the milliseconds that have elapsed since the reference date of January 1, 1970.
+            var msToday = currentDate.getTime();
+            alert("MilliSec From January 1, 1970 to Current Date is " + msToday);
+
+            var msDoomsDay = doomsday.getTime();
+            alert("MilliSec From January 1, 1970 to Future date is" + msDoomsDay);
+
+            //You calculate the difference.
+            var msDiff = msDoomsDay - msToday;
+            alert("Difference of Time in MS is " + msDiff);
+
+            //Some simple math converts the milliseconds to days.
+            var diffInDays = msDiff / (1000 * 60 * 60 * 24);
+            //The huge number created by the math inside the parentheses converts the milliseconds into seconds (1000), minutes (60),
+            // hours (60), and days (24).
+            alert("Difference Of Time In Days is " + diffInDays);
+            //You want a number that represents whole days, so you round down. The following statement rounds the number of days, which is
+            // probably a floating-point number, down to an integer.
+            diffInDays = Math.floor(diffInDays);
+            alert("Accurate Days is " + diffInDays);
+
+            //Here's the whole thing, condensed into something that looks more like production code
+            //like it is the short code to calculate the ms difference from current date to future date
+
+            var msDiffShort = new Date("30 june, 2025").getTime() - new Date().getTime();
+            alert("MS Difference in Short Approach is " + msDiffShort);
+            //and you can also convert it into no of days as we did 
+            var diffInDaysShort = msDiffShort / (1000 * 60 * 60 * 24);
+            alert('Difference is Days in Short Approach is ' + diffInDaysShort);
+            //you can also convert it into whole value as we did
+            diffInDaysShort = Math.floor(diffInDaysShort);
+            alert("Accurate Days Difference in Short Approach is " + diffInDaysShort);
+        </script>
+    </head>
+    <body>
+        <h1>Specifying a date and time</h1>
+    </body>
+</html>

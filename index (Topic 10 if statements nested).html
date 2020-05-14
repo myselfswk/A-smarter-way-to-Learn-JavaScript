@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>if statements nested</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            //first of all, we use simple example of if with multiple statements/condiions
+            var name = 'Muhammad Waleed Khan';
+            var age = 21;
+            var per = 75;
+            var nationality = 'Pakistani';
+            if ((age >= 18 || age <= 30) && per > 50 && nationality === 'Pakistani') {
+                alert('Congratulations '+ name + ', Welcome to Iqra University!');
+            }
+            else {
+                alert('Sorry, You are not applicable..!');
+            }
+            //the above example is multi-conditional example for if, we can use it in a simple way like
+            var myname = 'Muhammad Waleed Khan';
+            var myage = 21;
+            var myper = 75;
+            var mynationality = 'Pakistani';
+            if (myage >= 18 || myage <= 30) {
+                if (myper > 50) {
+                    if (mynationality === 'Pakistani') {
+                        alert('Congratulations '+ name + ', Welcome to Iqra University!');
+                    }
+                }
+            }
+            //Nest levels are communicated to JavaScript by the positions of the curly brackets.
+            //There are three blocks nested inside the top-level if. If the condition tested by the top-level if—that myage has the same value as as if gives
+            //  is fales, none of the blocks nested inside executes.
+            //The opening curly bracket of the main if and the closing curly bracket of that main if enclose all the nested code, telling JavaScript that
+            // everything inside is second-level.
+            else {
+                alert('Sorry, You are not applicable..!');
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Nested If Statements</h1>
+    </body>
+</html>

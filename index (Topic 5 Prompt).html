@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Prompt</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            //This code asks the user the question "Your species?" and provides a default answer in the response field, "human". She can change the response.
+            //Whether she leaves the default response as-is or changes it to something else, her response is assigned to the variable.
+            var spec = prompt('Your Species?', 'Human');  //this 'Human' shows as demo text, you can edit it
+            //you can also seperate your content by declearing it in any variable
+            var question = "What is Your species?";
+            var defaultAnswer = "Human";
+            var species = prompt(question, defaultAnswer);  //after coma, the value is used as default answer to any question
+            var numberOfCats = prompt("How many cats?");
+            var tooManyCats = numberOfCats + 1;
+            //Since you're asking for a number, and the user is presumably entering one, you might expect the math in the second statement to work.
+            //For example, if the user enters 3, the variable tooManyCats should have a value of 4, you might think. But no such luck. All responses to
+            //prompts come back as strings. When the string, "3", is linked with a plus to the number, 1, JavaScript converts the 1 to a string and
+            //concatenates. So the value of tooManyCats winds up being not 4 but "31".
+        </script>
+    </head>
+    <body>
+        <h1>Prompt</h1>
+        <!--A prompt box asks the user for some information and provides a response field for her answer.-->
+        <!--Prompt code is like alert code, with two differences.-->
+        <!--In a prompt, you need a way to capture the user's response. That means you need to start by declaring a variable, followed by an equal sign.
+            In a prompt, you can specify a second string. This is the default response that appears in the field when the prompt displays. If the user leaves
+            the default response as-is and just clicks OK, the default response is assigned to the variable. It's up to you whether you include a default
+            response.-->
+        <!--Some coders write window.prompt instead of, simply, prompt. This is a highly formal but perfectly correct way to write it. Most coders
+            prefer the short form.-->
+    </body>
+</html>

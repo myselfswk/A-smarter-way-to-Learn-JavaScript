@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The DOM: More ways to target elements</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        /*------------------Accessing Parent Node From Child Node----------------------*/
+        function getParentNode() {
+            var CNode = document.getElementById("divOne");
+            var PNode = CNode.parentNode;
+            CNode.style.fontFamily = "cursive";
+        }
+
+        /*------------------Changing Divs With Sibling relation-------------------------*/
+        function divSiblings() {
+            var middleEl = document.getElementById("secondDiv");
+            var firstEl = middleEl.previousSibling;
+            var thirdEl = middleEl.nextSibling;
+        }
+    </script>
+</head>
+<body>
+    <h1>The DOM: More ways to target elements</h1>
+    <!--So far you've learned to use the DOM's parent-child hierarchy to target a child node of a
+        parent node by specifying its order in an array-like collection of children—childNodes[0],
+        childNodes[1], childNodes[2], and so on. But there are other ways to use the hierarchy for
+        targeting. To begin with, instead of writing childNodes[0], you can write firstChild. And
+        instead of writing, for example, childNodes[9], to target the 10th child in a 10-child
+        collection of children, you can write lastChild.-->
+    <!--var targetNode = parentNode.childNodes[0];
+            ...is the same as...
+        var targetNode = parentNode.firstChild;
+            And if there are, for example, 3 child nodes...
+        var targetNode = parentNode.childNodes[2];
+            ...is the same as...
+        var targetNode = parentNode.lastChild;-->
+    <div id="divOne">
+        <div id="divTwo" onmouseover="getParentNode();">
+            <p>Karachi</p>
+            <p>Lahore</p>
+            <p>Peshawar</p>
+        </div>
+    </div>
+    <div id="firstDiv">This is First Div</div>
+    <div id="secondDiv">This is Second Div</div>
+    <div id="thirdDiv">This is Third Div</div>
+</body>
+</html>

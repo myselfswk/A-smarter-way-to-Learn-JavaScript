@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM: Adding & Inserting nodes</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            #divOne {
+                background-color: red;
+                width: 300px;
+                height: 300px;
+            }
+            .paraClass {
+                color: blue;
+            }
+            p {
+                margin-left: 40px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The DOM: Adding & Inserting nodes</h1>
+        <div id="divOne">
+            <p>This is Para One</p>
+            <p>This is Para Two</p>
+        </div>
+
+        <script>
+            /*---------------create tags----------------*/
+            var addPara = document.createElement("p");
+            var addImage = document.createElement("img");
+
+            /*----------------set attributes--------------*/
+            addPara.setAttribute("class", "paraClass");
+            addImage.setAttribute("border", "1");
+            /*Remember, at this point, we're just creating nodes. The new attribute node has been
+            connected to the new element node, but we haven't added the nodes to the page yet.*/
+
+            /*Getting back to the paragraph element, we've created it and added a class attribute to it.
+            Now let's give it some text content. Again, we begin by creating the node we want.*/
+
+            /*----------------Add Content in empty Para--------------*/
+            var paraContent = document.createTextNode("Muhammad Waleed Khan");
+            addPara.appendChild(paraContent);
+            /*The statement above adds the new text node, whose content is "Muhammad Waleed Khan", to the new paragraph node.
+            Now we have a new paragraph node with a class attribute and some text content. We're ready to insert it into the page.*/
+
+            /*----------------Inserting paragraphs into the web page-------------------*/
+            var parentDiv = document.getElementById("divOne");
+            parentDiv.appendChild(addPara);
+            /*When you add a node to your web page by appending it as a child to a parent, the limitation is that you have no control over
+            where the new element lands among the parent's children.*/
+
+            /*JavaScript always places it at the end. So for example, if the div in the example above already has three paragraphs,
+            the new paragraph will become the fourth one, even if you'd like to place it in a higher position. The solution is insertBefore.*/
+
+            /*----------------creating and inserting para in div-----------------*/
+            var addNewPara = document.createElement("p");
+            var textNewPara = document.createTextNode("This is Top Para");
+            addNewPara.appendChild(textNewPara);
+            var topPara = parentDiv.firstChild;   //position of first child or element
+            parentDiv.insertBefore(addNewPara, topPara);
+
+            /*There is no insertAfter method as such. But you can still do it. Simply insertBefore the target node's next sibling.*/
+            var addAnotherPara = document.createElement("p");
+            var textForAnotherPara = document.createTextNode("This is Bottom Para");
+            addAnotherPara.appendChild(textForAnotherPara);
+            var bottomPara = parentDiv.childNodes[1];  //parentDiv.childNodes[1] is first para of divOne
+            parentDiv.insertBefore(addAnotherPara, bottomPara.nextSibling);
+
+            /*--------------Remove para-----------------*/
+            var remPara = parentDiv.childNodes[3];
+            parentDiv.removeChild(remPara);
+        </script>
+    </body>
+</html>

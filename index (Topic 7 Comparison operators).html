@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Comparison operators</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            //comparisn example:-
+            var fname = 'Waleed';
+            //or you can take it as user input
+            //var fname = prompt('What is Your First Name?');
+            var lname = 'Khan';
+            //or you can take it as user input
+            //var lname = prompt('What is Your Last Name?');
+            var fullname = fname +' '+ lname;
+            var question = prompt('What is Your Name?');
+            if (question === fullname) {
+                alert('Your name is same as mine!');
+            }
+            if (question !== fullname) {
+                alert('Your name is Not same as mine!');
+            }
+            //comparisn with numbers
+            var age = 21;
+            var quesage = 21;
+            //quesage is not save int value, but string value
+            if (quesage === age) {
+                alert('Your Age is Same as Mine!');
+            }
+            //an mathematical Expression
+            var a = 6;
+            var b = 8;
+            var x = 21;
+            var y = 7;
+            if (a + b === x - y) {
+                alert('Your Expression is OK!');
+            }
+            var totalCost = 34510;
+            var materialsCost = 17510;
+            var laborCost = 17000;
+            if (totalCost === materialsCost + laborCost) {
+                alert('Calculation is OK!');
+            }
+            //flower example
+            flower = 'Rose';
+            ansFlower = 'rose';
+            if (flower !== ansFlower) {
+                alert('Your Answer is not Same!')
+            }
+            //mathematical Expresions
+            if (1 > 0) {
+                alert('One is greater than Zero');
+            }
+            if (2 < 4) {
+                alert('Two is less than four');
+            }
+            if (1 >= 0) {
+                alert('One is greater than & Equal to Zero');
+            }
+            if (0 <= 1) {
+                alert('Zero is less than & Equal to one');
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Comparison operators</h1>
+        <!--Let's talk a little more about ===. It's a type of comparison operator, specifically an equality operator-->
+        <!--you use it to compare two things to see ifthey're equal -->
+    </body>
+</html>

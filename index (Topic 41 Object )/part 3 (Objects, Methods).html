@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Objects: Methods</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Objects: Methods</h1>
+
+    <script>
+        /*Creating Objects*/
+        /*Basic Plan*/
+        var basicPlan = {
+            name: "Basic",
+            price: 3.99,
+            space: 100,
+            transfer: 1000,
+            pages: 10,
+            discountMonths: [6, 7]
+        };
+
+        /*Calculate Annual Charges*/
+        function calcAnnual() {
+            var bestPrice = basicPlan.price;
+            var currDate = new Date();
+            currMonth = currDate.getMonth();
+            for (var i=0; i<basicPlan.discountMonths.length; i++) {
+                if (basicPlan.discountMonths[i] === currMonth) {
+                    bestPrice = basicPlan.price * .8;
+                    break;
+                }
+            }
+            return bestPrice * 12;  //multiply by 12 because of annual report(12 month in an year)
+        }
+
+        var annualPrice = calcAnnual();
+        alert(annualPrice);
+
+        /*But now let's make the function more flexible so the discount rate can vary, depending on
+            the value that the calling statement passes to it. Here's the revision, with the percentage to be
+            charged, passed to the parameter percentIfDisc, if the user qualifies for a discount.*/
+
+        function calcAnnualTwo(percentIfDisc) {
+            var bestPrice = basicPlan.price;
+            var currDate = new Date();
+            currMonth = currDate.getMonth();
+            for (var i=0; i<basicPlan.discountMonths.length; i++) {
+                if (basicPlan.discountMonths[i] === currMonth) {
+                    bestPrice = basicPlan.price * percentIfDisc;
+                    break;
+                }
+            }
+            return bestPrice * 12;  //multiply by 12 because of annual report(12 month in an year)
+            //This is the calling statement that passes the value to the function and executes it.
+        }
+
+        var annualPriceTwo = calcAnnualTwo(0.7);
+        alert(annualPriceTwo);
+
+        /*You've learned that you can attach a variable to an object, and the variable becomes the
+            object's property. Here's more news. You can attach a function to an object, and the function
+            becomes that object's method. It does the same task the regular function does, but now it's
+            attached to an object.*/
+
+        /*Ultimate Plan*/
+        var ultiPlan = {
+            name: "Ultimate",
+            price: 9.99,
+            space: 2000,
+            transfer: 20000,
+            pages: 500,
+            discountMonths: [6, 7],
+            calcAnnualThree: function(percentIfDiscTwo) {
+                var ultiPrice = ultiPlan.price;
+                var currDate = new Date();
+                currMonth = currDate.getMonth();
+                for (var i=0; i<ultiPlan.discountMonths.length; i++) {
+                    if (ultiPlan.discountMonths[i] === currMonth) {
+                        ultiPrice = ultiPlan.price * percentIfDiscTwo;
+                        break;
+                    }
+                }
+            return ultiPrice * 12;  //multiply by 12 because of annual report(12 month in an year)
+            //This is the calling statement that passes the value to the function and executes it.
+            }
+        };
+
+        var annualPriceThree = ultiPlan.calcAnnualThree(0.9);
+        alert(annualPriceThree);
+
+        /*I'm going to add a refinement to the method definition. In the definition I coded above, the
+            properties are referred to using the name of the object—for. This works, but a better approach, for reasons that will
+            become clear in subsequent chapters, is to replace the name of the object with the keyword this. When JavaScript sees this
+            keyword, it knows you're referring to the object that's being defined.*/
+        /*Professional Plan*/
+        var proPlan = {
+            name: "Professional",
+            price: 5.99,
+            space: 500,
+            transfer: 5000,
+            pages: 50,
+            discountMonths: [6, 7, 11],
+            calcAnnualFour: function(percentIfDiscThree) {
+                var proPrice = this.price;
+                var currDate = new Date();
+                var thisMonth = currDate.getMonth();
+                for (var i=0; i<this.discountMonths.length; i++) {
+                    if (this.discountMonths[i] === thisMonth) {
+                        proPrice = this.price * percentIfDiscThree;
+                        break;
+                    }
+                }
+                return proPrice * 12;
+            }
+        };
+
+        var annualPriceFour = proPlan.calcAnnualFour(0.78);
+        alert(annualPriceFour);
+    </script>
+</body>
+</html>

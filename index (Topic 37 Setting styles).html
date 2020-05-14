@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Setting styles</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            function makeBig() {
+                document.getElementById("para").style.fontSize = "2em";
+            }
+
+            /*For image floating left*/
+            function floating() {
+                document.getElementById("imgFloatLeft").style.cssFloat = "right";
+            }
+            /*disappear paragraph*/
+            function disappearPara() {
+                document.getElementById("paraD").style.visibility = "hidden";
+            }
+            /*Give margin to image*/
+            function imgMar() {
+                document.getElementById("imgM").style.margin = "0px 20px 0px 20px";
+            }
+            /*You can set many style properties this way. Sometimes the terms for property specs aren't
+                obvious, so it's best to check the language rules—is it "float" or "cssFloat"?—rather than guessing.*/
+
+            /*As usual, you can read properties as well as set them. However, the rules aren't straightforward. If you write...
+                var m = document.getElementById("mainPic").style.margin;*/
+        </script>
+    </head>
+    <body>
+        <h1>Setting styles</h1>
+        <p id="para" onmouseover="makeBig();">My Name Is Muhammad Waleed Khan</p>
+        <hr />
+        <img src="./Images/ButtonPic.PNG" alt="Button Picture" id="imgFloatLeft" onmouseover="floating();">
+        <p id="paraD" onmouseover="disappearPara();">This is the paragraph, second paragraph. On mouse over, its will be dissappear....</p>
+        <img src="./Images/ButtonPic.PNG" alt="Button Picture" id="imgM" onmouseover="imgMar();">
+    </body>
+</html>

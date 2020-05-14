@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Objects: Constructors</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Objects: Constructors</h1>
+
+    <script>
+        /*Creating Objects*/
+        /*Basic Plan*/
+        var basicPlan = {
+            name: "Basic",
+            price: 3.99,
+            space: 100,
+            transfer: 1000,
+            pages: 10
+        };
+
+        alert(basicPlan.name);
+        /*But that only gets us an object that represents the first plan. I'd have to do the same thing
+            again for the Professional and Ultimate plans. This is too much hand craftsmanship. We need a
+            factory to crank out these things by the dozen. JavaScript lets you build such a factory. It's called a constructor function.*/
+
+        function Plan(name, price, space, transfer, pages) {
+            this.name = name;
+            this.price = price;
+            this.space = space;
+            this.transfer = transfer;
+            this.pages = pages;
+        }
+        /*It's common to use the same names for parameters and properties, but you don't have to.*/
+
+        /*This would be a plain-vanilla function definition but for two differences:
+            >> The function name is capitalized. JavaScript doesn't care whether you do this or not, but
+                it's conventional to do it to distinguish constructor functions from regular functions.
+            >> Each of the parameter values is assigned to a variable. But the variable is a property
+                attached to some object whose name hasn't been specified yet. But don't worry. Just as the
+                parameter values will be filled in by the calling code, so will the name of the object.*/
+        /*This would be just a regular function call if it weren't for that new. It's the keyword that tells JavaScript to create
+            a new object.*/
+        
+        var proPlan = new Plan("professional", 5.99, 500, 5000, 50);
+        alert(proPlan.name);
+        var ultiPlan = new Plan("Ultimate", 9.99, 2000, 20000, 100);
+        alert(ultiPlan.name);
+    </script>
+</body>
+</html>

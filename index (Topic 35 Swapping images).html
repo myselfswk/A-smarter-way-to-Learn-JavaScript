@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Swapping images</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+        <script>
+            /*single image swapping*/
+            function picSwap() {
+                document.getElementById("before").src = "./Images/srk-new-pic.jpg";
+                /*A more common way to code the function is to break it into two steps, first assigning
+                    document.getElementById("before") to a variable. Then you combine that variable with
+                    .src. Let's call it the verbose approach.*/
+                /*function swapPic() {
+                    var pic = document.getElementById("before");
+                    pic.src = "after-pic.jpg";
+                    }*/
+            }
+
+            /*can swap any image*/
+            function swapPic(eId, ePic) {
+                document.getElementById(eId).src = ePic;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Swapping images</h1>
+        <img src="./Images/SRK-Old-Pic.jpg" alt="Srk Old Picture" id="before" onmouseover="picSwap();">
+        <hr />
+        <img src="./Images/SRK-Old-Pic.jpg" alt="Srk Old Picture" id="before-two" onmouseover="swapPic(id, './Images/srk-new-pic.jpg')">
+    </body>
+</html>

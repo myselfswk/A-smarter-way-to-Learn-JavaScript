@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>switch statements: How to start them</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            //-------------switch statements: How to start them----------------
+
+            //Consider this chain of conditional statements.
+            var day = "friday";
+            if (day === "friday") {
+                alert("Iqra University is Officially Off");
+            }
+            else if (day === "saturday" || day === "sunday") {
+                alert("Some Classes will conduct as per Schedule..!");
+            }
+            else {
+                alert("All Student will Come...!");
+            }
+            //It works, but it's unwieldy and a little ugly, especially if you have many conditions to test.
+            //The more conditions you need to test, the more you'll like the switch statement. This switch statement duplicates the
+            // functionality
+
+            switch(day) {
+                case "friday":
+                    alert("Iqra University is Officially Off");
+                    break;
+                
+                case "saturday":
+                    alert("Some Classes will conduct as per Schedule..!");
+                    break;
+
+                case "sunday":
+                    alert("Some Classes will conduct as per Schedule..!");
+                    break;
+
+                default:
+                    alert("All Student will Come...!");
+            }
+
+            //---------------switch statements: How to complete them--------------------------
+            
+            //The first line of an if statement is followed by a statement (or statements) that executes if the condition is true. A switch
+            // statement works similarly. On the line below each case clause, there's a statement (or statements) that executes if the case
+            // is true.
+
+            var nationality = "Pakistani";
+            switch (nationality) {
+                case "Pakistani" :
+                    alert("I Am Pround Pakistani");
+                    break;
+
+                case "Indian" :
+                    alert("Indians is our Neighbour");
+                    break;
+
+                case "China" :
+                    alert("China is our Friend, Probably...!");
+                    break;
+
+                default :
+                    alert("No Country Found....!");
+            }
+
+            //Once again, the code that executes if the case is true is indented 2 spaces. (The universal convention is that it is indented
+            // by some amount. Opinions differ on how much is best.
+
+            //JavaScript has an inconvenient quirk: After a true case is found, JavaScript not only executes the statement(s) immediately
+            // below that case. It executes all the statements for all the cases below it. So after a true case is found and the conditional
+            // code executes, you need to jump out of the switch block by coding a break statement.
+
+            //The keyword default works like else in an if...else statement. The code that follows it executes if none of the conditions
+            // above it are met. There's no break statement in the default block. That's because default always comes last, which means
+            // there are no statements below it to execute inappropriately.
+
+            //In a switch statement, default code is optional, just as else code is optional after an if statement. Without the default
+            // code, if none of the cases test true, nothing happens.
+
+            //When there is no default code, careful coders include a break statement after the last condition anyway as insurance, even
+            // though it may be superfluous. If you decide to add a new condition to the end later, you won't have to remember to add a break
+            // to the block above it in order to avoid a disastrous cascade of statements.
+        </script>
+    </head>
+    <body>
+        <h1>switch statements</h1>
+        <ul>
+            <li>switch statements: How to start them</li>
+            <li>switch statements: How to complete them</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>If Statement</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            //if condition
+            var founder = prompt('Who was the Founder of Pakistan?');
+            if (founder === 'Quaid-e-Azam') {
+                alert('Congratulations, Your Answer is Correct!');
+            }
+            //what about that triple equal sign? You might think that it should just be an equal sign, but the equal sign is reserved for assigning a value
+            //to a variable. If you're testing a variable for a value, you can't use the single equal sign. If you forget this rule and use a single equal
+            //sign when you should use the triple equal sign, the code won't run properly.
+            //Or you can write the different example of if statement with different approach
+            var natpoet = prompt('Who is Our National Poet?');
+            var answer = 'Allama Iqbal';
+            if (natpoet === answer) {
+                alert('Congratulations, Your Answer is Correct!');
+            }
+            //When a condition is met, you can have any number of statements execute.
+            var city = prompt('What is Your City Name?');
+            var neighbours = 12;
+            var Friends = 23
+            var name = 'Waleed';
+            if (city === 'Karachi') {
+                neighbours++;
+                Friends++;
+                name = 'Huzaifa';
+                alert('You live in Same City As I am...!')
+            }
+        </script>
+    </head>
+    <body>
+        <h1>If Statement</h1>
+        <!--if statement used in multiple statements/conditions-->
+        <!--An if statement always begins with if. The space that separates it from the parenthesis is new to you. I've taught you to code alerts and
+            prompts with the opening parenthesis running up against the keyword-->
+        <!--The first line of an if statement ends with an opening curly bracket. An entire if statement ends with a closing curly bracket on its own line.
+            Note that this is an exception to the rule that a statement ends with a semicolon. It's common to omit the semicolon when it's a complex statement
+            that's paragraph-like and ends in a curly bracket.-->
+        <!--Some coders write simple if statements without curly brackets, which is legal. Some put the opening curly bracket on its own line. Some put
+            the whole if statement, if it's simple, on a single line-->
+    </body>
+</html>

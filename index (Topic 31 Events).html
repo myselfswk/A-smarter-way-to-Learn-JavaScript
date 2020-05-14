@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Events</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            /*-----------------Events: link----------------*/
+
+            /*All of these user actions—clicking a button, moving the mouse, moving from one field to
+            another in a form, selecting a different option—are known as events. JavaScript code that
+            responds to an event—for example, displaying a guarantee or swapping an image when the
+            pointer hovers over it—is called an event handler.*/
+
+            /*Inline event-handling means that you combine bits of JavaScript with HTML markup.
+            Here's a line that displays a link and then displays an alert when the user clicks it.*/
+
+            function popup(message) {
+                alert(message);
+            }
+
+            /*------------------Events: button----------------------*/
+
+            /*But even if you're using the inline method, when you want to give the user something to
+                click, a more professional approach, usually, is to use a button rather than a link.*/
+
+            function ShutDown() {
+                alert("This is ShutDown Button");
+            }
+
+            /*--------------------Events: mouse----------------------*/
+
+            /*You've learned how to make things happen when the user clicks a link, a button, or an
+                image, by using inline event-handling. Inline event handling isn't the best approach, but the
+                easiest to learn.*/
+            function expends() {
+                alert('Karachi is the capital of the Pakistani province of Sindh. It is the largest city in Pakistan, and seventh largest city proper in the world. Ranked as a beta-global city, the city is Pakistans premier industrial and financial centre, with an estimated GDP of $114 billion as of 2014')
+            }
+
+            /*---------------------Events: fields----------------------*/
+
+            function makeFieldYellow() {
+                document.getElementById('name').style.backgroundColor = 'Yellow';
+            }
+
+            function makeFieldWhite() {
+                document.getElementById('name').style.backgroundColor='white';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Events</h1>
+        <ul>
+            <li>Events: link</li>
+            <a href="#" onclick="alert('Assalam-u-Alaikum, Waleed Here..!');">Greeting</a><br />
+            <!--notice: onClick="alert('Hi');" The message inside the parens is
+                surrounded by single quotes, not the double quotes we've been using for an alert string.-->
+            <!--In JavaScript code, you aren't allowed to nest double quotes within double quotes or single quotes within single quotes-->
+            <!--As an HTML coder, you're familiar with the beginning and end of this markup, <a href=""> & </a>
+                But when the user clicks this link, it behaves differently than normal hyperlinks. Instead of
+                taking the user to another page, or to a named anchor on the same page, it displays an alert
+                saying "Assalam-u-Alaikum, Waleed Here..!".
+            -->
+            <!--Let's break it down.-->
+                <!--When the user clicks the link, you don't want a new webpage to be loaded in this case, so,
+                    instead of a URL, you place a # inside the quotation marks. This tells the browser to
+                    reload the current page.-->
+                <!--onClick= says, "When the button is clicked, execute the following JavaScript." onClick
+                    isn't case-sensitive. You could write onclick, ONCLICK, or OnClIcK and it would work.
+                    But the convention is onClick, so we'll stick with that.-->
+                <!--A JavaScript statement (or more than one), enclosed in quotes, follows. When the user
+                    clicks the link, it executes.-->
+            <!--But there's a problem with the markup above. <a href="#" tells the browser to reload
+                the page. This means that if the user has scrolled down to the link, the click, in addition to
+                running the JavaScript code, will scroll the page back to the top—an action you don't normally
+                want. I've included this flawed approach, using <a href="#", because you'll run into here and
+                there in other people's work-->
+            <a href="JavaScript:void(0)" onclick="alert('Assalam-u-Alaikum, Waleed Here..!');">Greeting(No Page Reload)</a><br />
+
+            <!--there is no limit to the number of JavaScript statements that you can enclose in the quotation marks. No
+                limit, that is, except for common sense. As you'll see, there are better ways to trigger
+                JavaScript than packing multiple statements into an online onClick event.-->
+
+            <a href="JavaScript:void(0)" onclick="var greet='Assalam-u-Alaikum, Waleed Here..!'; alert(greet);">Greeting(With Var)</a>
+            <br />
+            <a href="JavaScript:void(0)" onclick="popup('Muhammad Waleed Khan');">welcome</a>
+            <li>Events: button</li>
+            <input type="button" value="Click Me" onclick="alert('Assalam-u-Alaikum, Waleed Here');"><br />
+            <!--The event handler is the same, whether you're coding a link or a button-->
+            <!--As an HTML coder you know that you can use an image as a hot link. The markup would look something like this.-->
+            <img src="./Images/ButtonPic.PNG" alt="ShutDown Button Picture" onclick="alert('This is ShutDown Button');"><br />
+            <!--Or, if you want to be more professional about it, you could have the event trigger a function.-->
+            <img src="./Images/ButtonPic.PNG" alt="ShutDown Button Picture" onclick="ShutDown();">With function
+            <li>Events: mouse</li>
+            <!--Suppose your page initially displays a "before" picture of a model. When the user mouses
+                over the picture, it is replaced by an "after" picture. You might prefer to do this with CSS, but
+                since this is a JavaScript book, I'll show you how to do it with an event handler.-->
+            <img src="./Images/SRK-Old-Pic.jpg" alt="srk old picture" width="300px" onmouseover="src='./Images/srk-new-pic.jpg';" onmouseout="src='./Images/SRK-Old-Pic.jpg';"><br />
+            <span onmouseover="alert('Muhammad Waleed Khan');">Waleed Khan</span><br />
+            <a href="#" onmouseover="this.style.color='green';" onmouseout="this.style.color='blue';">Home Page</a><br />
+            <span onmouseover="expends();">Karachi: Mouse over for more info</span>
+            <li>Events: fields</li>
+            <!--Let's say you have a text field for the user's email address. When the user clicks in the
+                field to type her entry, the field turns yellow.-->
+            <label for="name">Name</label>
+            <input id="name" type="text" size="30" onfocus="makeFieldYellow();" onblur="makeFieldWhite();"><br /><br />
+            <label for="email">Email</label>
+            <input type="text" size="30" onfocus="this.style.backgroundColor='Yellow';" onblur="this.style.backgroundColor='white';">
+        </ul>
+    </body>
+</html>

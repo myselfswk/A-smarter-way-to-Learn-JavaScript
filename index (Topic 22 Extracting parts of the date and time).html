@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Extracting parts of the date and time</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            var dayNames = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+            var dateObject = new Date();
+            alert("The current day is " + dayNames[dateObject.getDay()]);
+
+            var monthNames = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+            alert("The Current Month is " + monthNames[dateObject.getMonth()]);
+
+            alert("The Current Date is " + dateObject.getDate());
+
+            alert("The Current Year is " + dateObject.getFullYear());
+
+            alert("The Current Hours(In 24 Hours time) is " + dateObject.getHours());
+
+            alert("The Current Minutes is " + dateObject.getMinutes());
+
+            alert("The Current Second is " + dateObject.getSeconds());
+
+            alert("The Current MilliSecond is " + dateObject.getMilliseconds());
+
+            alert("The Current Time is " + dateObject.getTime());
+            //getTime gives you the number of milliseconds that have elapsed since midnight, Jan. 1, 1970.
+        </script>
+    </head>
+    <body>
+        <h1>Extracting parts of the date and time</h1>
+        <img src="./Images/DateObjectAttributes.PNG" alt="Date Object Attributes">
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>String</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script type="text/JavaScript">
+            //Strings: Measuring length and extracting parts
+            //To copy a section of a string, you use the slice method. Suppose the user has entered a string, and the string has been assigned
+            // to the variable cityToCheck. The following code copies the first character of the string and assigns it to the variable
+            // firstChar. The original value of cityToCheck doesn't change. If cityToCheck is "Boston", firstChar is "B".
+            //let suppose we have an array 
+            var cityToCheck = prompt('Enter City:');
+            var firstChar = cityToCheck.slice(0, 1);
+            alert(firstChar);
+            //A string is indexed like an array. Only, instead of each index number referring to an element, it refers to a character.
+            //Like array indexing, string indexing begins with 0.
+            //In the slice method, the first number inside the parentheses is the index of the first character in the slice. The second
+            // number is not, however, the last character in the slice. It's the first character after the slice. If you subtract the first
+            // index from the second index, you'll always get the length of the slice.
+            var someChar = cityToCheck.slice(2,5);
+            //The slice begins with the index-2 (the third character). It ends with the character before the index-5 (the sixth character)
+            alert(someChar);
+            //If you omit the second number inside the parentheses, JavaScript includes all the characters to the end of the string.
+            var charWithTwo = cityToCheck.slice(2);
+            alert(charWithTwo);
+
+            // now create centralized string variable
+            var name = prompt('Enter Your Name:');
+            var firstLetter = name.slice(0, 1);
+            firstLetter = firstLetter.toUpperCase();
+            var otherLetters = name.slice(1);
+            otherLetters = otherLetters.toLowerCase();
+            var yourName = firstLetter + otherLetters;
+            alert("Your Name in Centralized Form: " + yourName)
+
+            //Here's what happens in the code above, line-by-line:
+                // 1. Copies the first character of the string and assigns it to the variable firstChar.
+                // 2. Copies all the characters from the second one to the end and assigns them to the variable otherChars.
+                // 3. Caps the first character.
+                // 4. Lower-cases the other characters.
+                // 5. Concatenates both parts to re-form the whole string.
+            
+            //Sometimes it's useful to know how many characters are in a string. For example, suppose you want to slice the first three
+            // characters from any string than exceeds three characters in length, for example, slicing "Nov" from "November".
+            
+            var month = prompt('Enter any Month:');
+            var charInMonth = month.length;
+            //alert(charInMonth)
+            var monthabbre = null;
+            if (charInMonth > 3) {
+                monthabbre = month.slice(0, 3);
+            }
+            alert("Abbreviations of your Month: " + monthabbre);
+
+            var str = "Waleed  Khan"   //waleed khan
+            var numChars = str.length;    //11
+            for (var i = 0; i < numChars; i++) {
+                if (str.slice(i, i + 2) === " ") {
+                    alert("No double spaces!");
+                    break;
+                }
+            }
+
+            // String: Finding segments
+
+            var text = "World War II";
+            for (var i = 0; i < text.length; i++) {
+                if (text.slice(i, i + 12) === "World War II") {
+                    text = text.slice(0, i) + "the Second World War" + text.slice(i + 12);
+                }
+            }
+            alert(text);
+
+            var textTwo = "World War II";
+            var firstChar = textTwo.indexOf("World War II");
+            //The indexOf method can only identify the character at a particular location. It can't change the character at a location.
+            if (firstChar !== -1) {
+                textTwo = textTwo.slice(0, firstChar) + "the Second World War" + textTwo.slice(firstChar + 12);
+            }
+            alert(textTwo);
+
+            var text = "To be or not to be.";
+            //it gives you the answer in int
+            var segIndex = text.lastIndexOf("to");
+            alert(segIndex);
+
+            //Strings: Finding a character at a location
+
+            //The user has entered his first name. The string has been assigned to the variable firstName. You want to extract the first
+            // character. You already know one way to do it.
+            firstName = "Waleed"
+            var firstChar = firstName.slice(0, 1);
+
+            //Here's an alternate way to do it that's more direct.
+            var firstChar = firstName.charAt(0)
+            alert(firstChar);
+            //The code above finds a single character at index-0 (the beginning) of the string represented by the variable firstName and
+            // assigns it to the variable firstChar.
+            var name = "Waleed Khan";
+            var lastChar = name.charAt(name.length - 1);
+            alert(lastChar);
+
+            //simple example
+            var username = "Waleed Khan";
+            for (var i = 0; i < username.length; i++) {
+                if (username.charAt(i) === "!") {
+                    alert("Exclamation point found!");
+                    break;
+                }
+                else {
+                    alert(username);
+                    break;
+                }
+            }
+
+            //Strings: Replacing characters
+
+            //JavaScript provides a more straightforward way still, the replace method.
+            var animal = "cow";
+            var repanimal = animal.replace("cow", "Lion");
+            //The first string inside the parentheses is the segment to be replaced. The second string is the segment to be inserted.
+            alert(repanimal);
+
+            //If you assign the revised string to a new variable, as in the example above, the original string is preserved. If you want the
+            // original string to be replaced by the revised string, assign the revised string to the original variable.
+            //In the examples above, only the first instance of a string is replaced. If you want to replace all instances, you must let
+            // JavaScript know that you want a global replace.
+            
+            var ani = "Hen";
+            var newani = ani.replace(/Hen/g, "Peacock");
+            alert(newani);
+
+            //In a global replace, you enclose the segment to be replaced by slashes instead of quotation marks, and follow the closing
+            // slash with "g" for "global." The segment to be inserted is enclosed by quotation marks, as in a one-time replace.
+        </script>
+    </head>
+    <body>
+        <h1>String</h1>
+        <ul>
+            <li>Measuring length and extracting parts</li>
+            <li>Finding segments</li>
+            <li>Finding a character at a location</li>
+            <li>Replacing characters</li>
+        </ul>
+    </body>
+</html>

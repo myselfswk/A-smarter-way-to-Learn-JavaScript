@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Changing elements of a date and time</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            //we can change individual elements of a Date object.
+
+            //setFullYear sets the year of an existing Date object without changing any other element.
+            var dateObject = new Date();
+            var year = dateObject.setFullYear(1999);
+            //Line 1 creates a new Date object for the current moment. Line 2 changes the year of the Date object to 2001, leaving all other
+            // elements of the Date object intact.
+            // alert(year);    //it gives answer in millisec
+
+            //setMonth sets the month of an existing Date object without changing any other element.
+            var month = dateObject.setMonth(3);
+            //alert(month);   //it gives answer in millisec
+
+            //setDate sets the day of the month of an existing Date object without changing any other element.
+            var date = dateObject.setDate(09);
+            //alert(date);  //it gives answer in millisec
+
+            // setHours sets the hours of an existing Date object without changing any other element.
+            var hours = dateObject.setHours(24);
+            //alert(hours);  //it gives answer in millisec
+
+            // etMinutes sets the minutes of an existing Date object without changing any other element.
+            var min = dateObject.setMinutes(27);
+
+            //setSeconds sets the seconds of an existing Date object without changing any other element.
+            var sec = dateObject.setSeconds(43);
+
+            //setMilliseconds sets the milliseconds of an existing Date object without changing any other element.
+            var milliS = dateObject.setMilliseconds(678);
+
+            alert(dateObject);
+        </script>
+    </head>
+    <body>
+        <h1>Changing elements of a date and time</h1>
+    </body>
+</html>

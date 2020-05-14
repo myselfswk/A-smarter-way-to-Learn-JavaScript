@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM: Attribute names and values</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>The DOM: Attribute names and values</h1>
+        <div id="divOne" class="DivClass" onmousemove="divWithAttributes();">
+            <p>This is Para One</p>
+            <p>This is Para Two</p>
+            <p>This is Para Three</p>
+            <p>This is Para Four</p>
+        </div>
+
+        <script>
+            /*you learned how to make a collection of elements that share the same tag name, with a statement like this...
+                var list = document.getElementsByTagName("p");
+            ...and how to make a collection of all the children of an element, with a statement like this...
+                var list = document.getElementById("p1").childNodes;*/
+            function divWithAttributes() {
+                var listOfatt = document.getElementById("divOne").attributes;
+                var noOfatt = listOfatt.length;
+                var nName = listOfatt[1].nodeName;
+                alert(nName);
+                var nValue = listOfatt[1].nodeValue;
+                alert(nValue);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>The DOM: Parents and children</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h1>The DOM: Parents and children</h1><br />
+        <!--Except for the document node, each node is enclosed within another node. The <head>
+            and <body> nodes are enclosed within the <html> node. The <div> node is enclosed within
+            the <body> node. Two <p> nodes are enclosed within the <div> node. And a text node is
+            enclosed within each of the <p> nodes.-->
+        <!--When a node is enclosed within another node, we say that the enclosed node is a child of
+            the node that encloses it. So, for example, the <div> node is a child of the <body> node.
+            Conversely, the <body> node is the parent of the <div> node.-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../Images/DOMPnCCode.PNG" alt="DOM Parent & Child Relation Code">
+                </div>
+                <div class="col-md-6">
+                    <img src="../Images/DOMPnCLevel.PNG" alt="DOM Parent & Child Relation Level">
+                </div>
+            </div>
+        </div>
+        <hr />
+        <!--As you can see, <html> is the child of the document...<head> and <body> are the
+            children of <html>...<div> is the child of <body>...two <p>'s are the children of <div>...each
+            text node is the child of a <p>. Conversely, the document is the parent of <html>, <html> is
+            the parent of <head> and <body>, <head> is the parent of <title>, <title> is the parent of a
+            text node, and so on. Nodes with the same parent are known as siblings. So, <head> and
+            <body> are siblings because < html> is the parent of both. The two <p>'s are siblings because
+            <div> is the parent of both.-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!--Now, Look at this Markup-->
+                    <p>This is <em>Important</em>!</p>
+                    <p>If you made a chart for this paragraph, you might think that all the text is a child of the p tag
+                        node. But remember, every node that is enclosed by another node is the child of the node that
+                        encloses it. Since the text node "important" is enclosed by the element node em tag, this
+                        particular text node is the child of em tag, not p tag. The text nodes "This is " and "!" as well as
+                        the element node em tag are siblings, because they're all enclosed by p tag. They're all children of p tag.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="../Images/DOMemText.PNG" alt="DOM em Paragraph Text">
+                </div>
+            </div>
+        </div>
+        <hr />
+    </body>
+</html>
