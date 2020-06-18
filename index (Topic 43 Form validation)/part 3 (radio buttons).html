@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>radio buttons</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>radio buttons</h1>
+        <form onsubmit="rbValidate('rb1');">
+            <label for="radioButon">Select Your Favorite Actress:</label>
+            <input type="radio" name="rb1" value="Ayeza Khan">Ayeza Khan
+            <input type="radio" name="rb1" value="Alizah Shah">Alizah Shah
+            <input type="radio" name="rb1" value="Hania Aamir">Hania Aamir
+            <input type="submit" value="Click Me">
+        </form>
+
+        <script>
+            function rbValidate(rname) {
+                var ra = document.getElementsByName(rname);
+                for (var i=0; i<ra.length; i++) {
+                    if (ra[i].checked) {
+                        alert("You Select " +ra[i].value);
+                        return true;
+                    }
+                }
+                alert("Please Select one!");
+                return false;
+            }
+        </script>
+    </body>
+</html>

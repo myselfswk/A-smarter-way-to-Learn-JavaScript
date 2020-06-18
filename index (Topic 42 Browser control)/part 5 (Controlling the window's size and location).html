@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Controlling the window's size and location</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>Controlling the window's size and location</h1>
+
+        <script>
+            var windowForFb = window.open("https://www.facebook.com", "windowOne");
+            /*In the statement above, the second item in the parentheses, "win1", is the name.
+            The name is useful for specifying the target attribute of an <a> or <form> element in HTML.*/
+
+            /*The name, used in HTML, is not the handle. The handle is used in JavaScript statements
+            that write to the window, assign a URL to it, or close it. The handle is the variable that precedes the equal sign.
+            The name is in quotes.
+            The name is separated from the URL by a comma followed by a space.
+            The name itself can't have spaces in it.*/
+
+            /*You can specify a URL parameter without a name parameter, but you can't specify a name
+            parameter without a URL parameter. But it is okay to specify an empty URL parameter, like this.*/
+            var emptyWindow = window.open('', 'EmptyWindow');
+
+            //we can specify the width and height of window
+            var scaleWindow = window.open("", "ScaleWindow", "width=500px, height=500px");
+            //Both parameters, width and height, are enclosed by a single set of quotation marks
+            /*Unlike the URL and name parameters, the order doesn't matter. Width can come before
+            height, height can come before width. But the width-and-height set must come third, after URL and name*/
+
+            /*A window that's smaller than the screen will display in the upper-left corner of the
+            screen. But you can optionally tell the browser where to place the window.*/
+            var scaleWindowTwo = window.open("", "ScaleWindowTwo", "width=500px, height=500px, top=100px, left=500px");
+
+            //you can also create new window with string variable,
+            var varForWindow = "'', 'VarForWindow', 'width=500px, height=500px, top=100px, left=500px'";
+            var windowWithVar = window.open(varForWindow);
+        </script>
+    </body>
+</html>

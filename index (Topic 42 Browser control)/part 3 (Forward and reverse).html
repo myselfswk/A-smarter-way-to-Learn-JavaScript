@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Forward and reverse</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>Forward and reverse</h1>
+
+        <script>
+            /*You can make the browser go back one URL in the browser history, as if the user has
+            pressed the Backspace key or clicked the browser's back button*/
+            history.back();
+
+            /*To make the browser go forward in the history, as if the user has pressed alt-right-arrow
+            or clicked the browser's forward button.*/
+            history.forward();
+            /*In both cases, if there is no URL in the history that would make the move possible, the
+            browser does nothing*/
+
+            /*You can tell the browser how many steps in the history you want to take, using negative
+            numbers to go back and positive numbers to go forward. The following statement is the
+            equivalent of pressing the Backspace key three times*/
+            history.go(-2); //for two step back
+            history.go(2); //for two step forward
+            /*If a negative number inside the parentheses is greater than the number of previous URLs
+            in the history, the browser will do nothing. If a positive number inside the parentheses is
+            greater than the number of forward URLs in the history, the browser will do nothing*/
+
+            /*When you want to go forward or backward just one step, you can choose either method.*/
+            history.back();
+            // is same as
+            history.go(-1);
+
+            history.forward();
+            // is same as
+            history.go(1);
+
+            /*There is no reliable way to find out how many items, backward and forward, there are in the history.
+            If the user clicked a link to get to the current page, you can get the URL of the page where the link was clicked.*/
+            var whereUserCameFrom = document.referrer;
+            /*The statement above assigns the URL where the link was clicked to the variable whereUserCameFrom.*/
+            /*However, this works only if a link was clicked, including a link in a search result. If the
+            user got to your page through a bookmark or by entering your URL in the address bar, the result
+            of document.referrer will be an empty string, ""*/
+        </script>
+    </body>
+</html>

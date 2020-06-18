@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Getting and setting the URL another way</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>Getting and setting the URL another way</h1>
+
+        <script>
+            window.location.assign("https://www.facebook.com");
+            //this will redirect you to the facebook main page, by this you can also redirect to any page or anchor
+
+            window.location.replace("https://www.facebook.com");
+            /*Once again, the statement directs the browser to a new URL. But by using replace
+            instead of assign, you interfere with the browser history. When you use assign, the history is
+            intact. The statement takes the user away from the original page, to the new page. If, after
+            arriving at the new page, she presses the Backspace key or clicks the browser's back button,
+            she goes back to the original page that she just came from.*/
+            /*But when you use replace, the
+            original page doesn't make it into the history. If the user presses Backspace after being taken
+            to the new page, she's taken to the page that displayed before the original page since the
+            original page is no longer in the history. If there is no page before the original page, nothing
+            happens when she presses Backspace*/
+
+            window.location.reload(true);
+            window.location.reload(false);
+            window.location.reload();
+            /*All three statements reload the current page. If the argument is true (example 1 above),
+            the statement forces the browser to load the page from the server. If the argument is false
+            (example 2) or if there is no argument (example 3), the browser will load the page from the
+            cache if the page has been cached*/
+
+            /*You can use window.location.href = window.location.href or any of the
+            abbreviated alternatives to reload the current page. The reload is faster, but it doesn't
+            allow you to specify whether the browser reloads from the server or the cache.
+            document.URL = document.URL doesn't work.*/
+        </script>
+    </body>
+</html>

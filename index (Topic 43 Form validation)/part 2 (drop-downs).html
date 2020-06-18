@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>drop-downs</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>drop-downs</h1>
+        <form onsubmit="ddlCity('selectCity');">
+            <select name="city" id="selectCity">
+                <option value="SAC" selected="selected">Select A City</option>
+                <option value="Kar">Karachi</option>
+                <option value="La">Lahore</option>
+                <option value="Mul">Multan</option>
+                <option value="Qe">Quetta</option>
+            </select>&nbsp;&nbsp;
+            <input type="submit" value="Select City">
+        </form>
+
+        <script>
+            function ddlCity(selectId) {
+                var targetddl = document.getElementById(selectId);
+                if (targetddl.selectedIndex === 0) {
+                    alert("Please! Select City");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

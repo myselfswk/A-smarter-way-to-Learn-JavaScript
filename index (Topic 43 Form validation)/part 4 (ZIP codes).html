@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>ZIP codes</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>ZIP codes</h1>
+        <form onsubmit="zipValidate();">
+            <label for="zip">Enter your Zip Code: </label>
+            <input type="text" id="zipCode">
+            <input type="submit" value="Submit Zip">
+        </form>
+
+        <script>
+            function zipValidate() {
+                var valueEntered = document.getElementById("zipCode").value;
+                var ziplength = valueEntered.length;
+                if (ziplength < 5) {
+                    alert("Please Enter a 5-digit code!");
+                    return false;
+                }
+                for (var i=0; i < 5; i++) {
+                    var thisChar = parseInt(valueEntered[i]);
+                    if (isNaN(thisChar)) {
+                        alert("Please Enter Only Numbers!");
+                        return false;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>try and catch</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>try and catch</h1>
+
+        <script>
+            function greeting() {
+                try {
+                    var greet = "Assalam u Alaikum";
+                    aler(greet);
+                }
+                catch(err) {
+                    alert(err);
+                }
+            }
+            /*The original operational code is wrapped in the try block. The mis-formed aler causes
+            a JavaScript error, which is passed to the catch block. An alert displays the error that caused the problem.
+            When you wrap some operational code in a try block, you say to JavaScript, "Try to
+            execute this code. If there's an error, stop executing, and go to the catch block to see what to
+            do." In the example above, the error thrown by JavaScript is assigned to the parameter err,
+            and that value is displayed in an alert:
+            "ReferenceError: Can't find variable: aler"*/
+
+            greeting();
+            /*Note that try and catch are always paired. Without try, an error won't trigger catch.
+            Without catch, JavaScript won't know what to do when it throws an error.*/
+            /*The code inside the try and the catch blocks is wrapped in curly brackets.
+            The functional code inside the try block is indented.
+            The error parameter, in this case err, can take any legal variable name.
+            In this example, an alert displays when an error occurs. But you could do something else.*/
+        </script>
+    </body>
+</html>

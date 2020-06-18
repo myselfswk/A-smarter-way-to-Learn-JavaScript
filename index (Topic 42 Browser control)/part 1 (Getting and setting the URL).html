@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Getting and setting the URL</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>Getting and setting the URL</h1>
+
+
+        <script>
+            var whereWeAt = window.location.href;
+            alert(whereWeAt);
+            //it tell us that where is our file
+
+            var theDomain = window.location.hostname;
+            alert(theDomain);
+            //it will gives you the host name of the website like if you're on facebook run this one, domain name will be "www.facebook.com"
+            //but in my case there is no domain name so the answer is null value, no value is in the theDomain variable
+
+            var thePath = window.location.pathname;
+            alert(thePath);
+            /*If the browser were on the home page and the URL were simply http://www.mybeautifulsite.com, the string "/" would be assigned
+            to the variable, simply the value after hostname is assigned to the thePath*/
+
+            /*In the example, the browser has been pointed to a section of the page marked by the anchor #humidifier. This statement
+            identifies the anchor*/
+            var anchor = window.location.hash;
+            alert(anchor);
+            /*The string "#humidifier" is assigned to the variable theAnchor. If there is no anchor in
+            the URL, the variable is assigned an empty string, ""*/
+
+            /*As usual, you can reverse the order of things, telling the browser where to go instead of asking where it is*/
+            window.location.href = "https://www.facebook.com/myselfswk";
+            /*The statement above tells the browser to navigate to the page named 1.html at the site me.com.
+            If you wanted the browser to navigate to the site's home page, you'd write...*/
+            window.location.href = "https://www.facebook.com";
+            /*also if you wanna redirect the user to any anchor page than you simply type #pagename after domain name*/
+
+            /*It would be nice if you could use window.pathname = ... to move to a different page
+            on the current site or window.hash = ... to move to an anchor on the current page, but you
+            can't. What you can do, though, is query the browser for the domain name and combine that
+            with the page where you want to go*/
+            var currSite = window.location.hostname;
+            var destination = "https://" + currSite + "/aboutUs.html";
+            window.location.href = destination;
+
+            /*This is how to direct the browser to an anchor on the current page.*/
+            var currPath = window.location.pathname;
+            var destination = "https://" + currSite + currPath + "#services";
+            window.location.href = destination;
+
+            /*You can omit window. It's legal to use location.href, location.hostname,
+            location.pathname, and location.hash. It's more common to include window*/
+            /*You can use document.URL as an alternative to window.location.href*/
+        </script>
+    </body>
+</html>

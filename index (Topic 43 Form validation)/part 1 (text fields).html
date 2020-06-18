@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>text fields</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>text fields</h1>
+        <form onsubmit="return chkForFirstName();">
+            <label>Enter Your First Name:</label>
+            <input type="text" id="fName">
+            <input type="submit" id="fButton" value="New User">
+        </form>
+
+        <script>
+            /*Repeating the document.getElementId... designation gets pretty unwieldy, so let's put it into a variable.*/
+            function chkForFirstName() {
+                var targetText = document.getElementById("fName");
+                if (targetText.value.length === 0) {
+                    alert("Please Enter Name..!");
+                    targetText.focus();
+                    targetText.style.backgroundColor = "yellow";
+                    return false;
+                }
+                targetText.style.backgroundColor = "white";
+            }
+        </script>
+    </body>
+</html>

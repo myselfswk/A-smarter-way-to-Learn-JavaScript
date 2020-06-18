@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Filling the window with content</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>Filling the window with content</h1>
+
+        <script>
+            var newWindow = window.open();
+            /*The code above opens a blank window of maximum size and gives it a handle, a variable that refers to this particular window*/
+            /*Depending on the browser, the window may open on top of the previous window, in a new tab, or even in a new copy of
+            the browser. You can't control this*/
+            var windowContent = 
+            "<title>Info</title><h1>Muhammad Waleed Khan</h1><p>My Name is Muhammad Waleed Khan</p><p>Age is 21</p>";
+            newWindow.document.write(windowContent);
+            /*The document.write method in this example is used to fill an empty window with
+            content. You could also use it to write to a window that already has content. But it will
+            overwrite all the HTML of the original document, replacing its content entirely.*/
+
+            //we can also create new window tab by,
+            newWindow.location.assign("http://www.animals.com/capuchin.html");
+            //...or...
+            newWindow.location.href = "http://www.animals.com/capuchin.html";
+            //remember one thing that the previous code is override  by the new code mention above
+
+            var windowForFB = window.open('https://www.facebook.com');
+            //if you wanna close window, code like
+            windowForFB.close();
+            //when you refresh your page, fb page will open for sec and than close very fast
+        </script>
+    </body>
+</html>

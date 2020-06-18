@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Testing for popup blockers</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body onload="testForPopUpBlocker();">
+        <h1>Testing for popup blockers</h1>
+
+        <script>
+            function testForPopUpBlocker() {
+                var testPop = window.open("", "testWindow", "width=500px, height=500px");
+                if (testPop === null) {
+                    alert("Please Disable your popUp Blocker!");
+                }
+                testPop.close();
+            }
+
+            /*The function shown above works with all browsers except Internet Explorer. In Internet
+            Explorer, if the popup is blocked, the handle will be undefined instead of null. So to cover all
+            bases, you need to code the function this way.*/
+            function testForPopUpBlocker() {
+                var testPop = window.open("", "testWindow", "width=500px, height=500px");
+                if (testPop === null || typeof(testPop === "undefined")) {
+                    alert("Please Disable your popUp Blocker!");
+                }
+                testPop.close();
+            }
+
+
+        </script>
+    </body>
+</html>

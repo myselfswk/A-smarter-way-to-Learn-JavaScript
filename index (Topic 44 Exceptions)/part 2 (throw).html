@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>throw</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+        <h1>throw</h1>
+        <form onsubmit="chkPass();">
+            <label for="pass">Enter the Password</label>(8-12 characters, at least 1 number, no space)
+            <input type="text" name="pas" id="userPass">
+            <input type="submit" value="Enter Button">
+        </form>
+
+        <script>
+            /*By adding one or more throw statements, you can define your own errors in a try...catch
+            pair. This can be useful for dealing with wayward user behavior*/
+
+            function chkPass() {
+                try {
+                    var usrPass = document.getElementById("userPass");
+                    if (usrPass.length < 8) {
+                        throw "Please Enter at least 8 Characters";
+                    }
+                    else if (usrPass.indexOf(" ") !== -1) {
+                        throw "No Space in the Password, Please!";
+                    }
+                    var NoSomeWhere = false;
+                    for (var i=0; i<usrPass.length; i++) {
+                        if (isNaN(usrPass(i, i+1) === false)) {
+                            NoSomeWhere = true;
+                            break;
+                        }
+                    }
+                    if (NoSomeWhere === false) {
+                        throw "Enter At Least One Number";
+                    }
+                }
+                catch (err) {
+                    alert(err);
+                }
+            }
+        </script>
+    </body>
+</html>
